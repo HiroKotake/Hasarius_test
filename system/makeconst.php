@@ -27,23 +27,59 @@ class TestMakeConst extends TestCase
         ];
         $scriptFile = "ScriptFile";
         $cssFile = "CssFile";
+        $globalAttributes = [
+            "id" => [
+                "Alias" => "id",
+                "CompareType" => "DEFINED",
+                "Value" => "STRING"
+            ],
+            "title" => [
+                "Alias" => "title",
+                "CompareType" => "DEFINED",
+                "Value" => "STRING"
+            ],
+            "style" => [
+                "Alias" => "css",
+                "CompareType" => "DEFINED",
+                "Value" => "STRING"
+            ],
+            "class" => [
+                "Alias" => "class",
+                "CompareType" => "DEFINED",
+                "Value" => "STRING"
+            ],
+            "lang" => [
+                "Alias" => "lang",
+                "CompareType" => "DEFINED",
+                "Value" => "STRING"
+            ],
+            "dir" => [
+                "Alias" => "dir",
+                "CompareType" => "DEFINED",
+                "Value" => "DIR_TYPE"
+            ]
+
+        ];
         $tagAttributes = [
             "id" => [
-                "alias" => "id",
-                "type" => "string"
+                "Alias" => "id",
+                "CompareType" => "DEFINED",
+                "Value" => "STRING"
             ]
         ];
         $cssAttributes = [
             "width" => [
-                "alias" => "w",
-                "type" => "numeric",
-                "subtype" => ["numeric", "px", "percent"]
+                "Alias" => "w",
+                "CompareType" => "DEFINED",
+                "Value" => "NUMERIC",
+                "postFix" => ["numeric", "px", "percent"]
             ]
         ];
 
         $this->assertEquals(SCRIPT, $script);
         $this->assertEquals(SCRIPT_FILE, $scriptFile);
         $this->assertEquals(CSS_FILE, $cssFile);
+        $this->assertEquals(GLOBAL_ATTRIBUTES, $globalAttributes);
         $this->assertEquals(TAG_ATTRIBUTES, $tagAttributes);
         $this->assertEquals(CSS_ATTRIBUTES, $cssAttributes);
     }

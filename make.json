@@ -43,5 +43,6 @@
     "UseHashFileName": 1,
     "AutoHashFileName": 0,
     "HashedFileName": "393wxok804dw983420ckle23",
-    "AttributeValidate": 0
+    "AttributeValidate": 0,
+    "ValidateStop": 1
 }
