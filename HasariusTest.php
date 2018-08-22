@@ -77,4 +77,9 @@ abstract class HasariusTest extends TestCase
 
         return $result;
     }
+
+    public function changeDtd(string $dtd = "HTML4_LOOSE")
+    {
+        uopz_redefine('CURRENT_DOCUMENT_DATA', $dtd);
+    }
 }
