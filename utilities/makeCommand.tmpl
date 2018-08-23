@@ -1,23 +1,14 @@
-<?php
-namespace Hasarius\test\commands;
 
-require("HasariusTest.php");
-use Hasarius\test\HasariusTest;
-use Hasarius\utils\HtmlValidation as HtmlValidation;
-
-class TestCommand@COMMAND_NAME@ extends HasariusTest
-{
-
-    public function provideValidate()
+    public function provideValidate@DTD@()
     {
         $params = [
-            @DATA@
+@DATA@
         ];
         return $params;
     }
 
-    /** @dataProvider provideValidate */
-    public function testValidate(string $dtd, string $text, array $params, string $result)
+    /** @dataProvider provideValidate@DTD@ */
+    public function testValidate@DTD@(string $dtd, string $text, array $params, string $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -28,4 +19,3 @@ class TestCommand@COMMAND_NAME@ extends HasariusTest
         $validated = HtmlValidation::validate($data['command'], $paramaters);
         $this->assertEquals($result, $validated);
     }
-}

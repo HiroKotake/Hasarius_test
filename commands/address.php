@@ -1,7 +1,7 @@
 <?php
 namespace Hasarius\test\commands;
 
-require("HasariusTest.php");
+require_once("HasariusTest.php");
 use Hasarius\test\HasariusTest;
 use Hasarius\utils\HtmlValidation as HtmlValidation;
 
