@@ -14,6 +14,10 @@ class CompareSample
             "OK" => ["left","right","all","none"],
             "NG" => ["lft","raght","al","non"],
         ],
+        "COLOR" => [
+            "OK" => ["yellow", "#FF7F00", "#FF0000", "#00FF10", "red"],
+            "NG" => ["yellaw", "#FF7F0", "#FG0000", "#00F10", "rad"],
+        ],
         "DIR_TYPE" => [
             "OK" => ["ltr","rtl","auto"],
             "NG" => ["lr","rl","ato"],
@@ -203,8 +207,12 @@ class CompareSample
             "NG" => ["-123.45","-0.25"],
         ],
         "US_NC" => [
-            "OK" => ["10","20","4086","256"],
+            "OK" => ["10","0","4086","256"],
             "NG" => ["-10","-20","-4086","-256"],
+        ],
+        "US_NZ" => [
+            "OK" => ["10","20","4086","256"],
+            "NG" => ["-10","20.5","-4086","256.5"],
         ],
         "WINDOW" => [
             "OK" => ["_blank","_self","_parent","_top","sub_window"],

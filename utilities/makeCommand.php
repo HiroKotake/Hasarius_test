@@ -125,7 +125,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(16) . "\"text\" => '#$command shape=\"" . $testValue["OK"]["key"] . "\" coords=\"" . $testValue["OK"]["value"] . "\"'," . PHP_EOL
                           .  spr(16) . "\"params\" => [" . PHP_EOL
                           .  spr(20) . "\"shape\" => '" . $testValue["OK"]["key"] . "'," . PHP_EOL
-                          .  spr(20) . "\"coords\" => '" . $testValue["OK"]["key"] . "'," . PHP_EOL
+                          .  spr(20) . "\"coords\" => '" . $testValue["OK"]["value"] . "'," . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL
                           .  spr(16) . "\"result\" => ''," . PHP_EOL
                           .  spr(16) . "\"description\" => \"OK CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
@@ -137,7 +137,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(16) . "\"text\" => '#$command shape=\"" . $testValue["NG"]["key"] . "\" coords=\"" . $testValue["NG"]["value"] . "\"'," . PHP_EOL
                           .  spr(16) . "\"params\" => [" . PHP_EOL
                           .  spr(20) . "\"shape\" => '" . $testValue["NG"]["key"] . "'," . PHP_EOL
-                          .  spr(20) . "\"coords\" => '" . $testValue["NG"]["key"] . "'," . PHP_EOL
+                          .  spr(20) . "\"coords\" => '" . $testValue["NG"]["value"] . "'," . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL
                           .  spr(16) . "\"result\" => \"[Validate Error] coords : " . $testValue['NG']["value"] . "\" . PHP_EOL," . PHP_EOL
                           .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
@@ -158,9 +158,9 @@ foreach ($defs["DocumentType"] as $dtd) {
                 $testData .= spr(12) . "// $key NG Case" . PHP_EOL
                           .  spr(12) . "[" . PHP_EOL
                           .  spr(16) . "\"dtd\" => \"$dtd\"," . PHP_EOL
-                          .  spr(16) . "\"text\" => '#$command $key=\"" . $testValue["OK"] . "\"'," . ($unDefined ? "// ToDo UNDEFINED VALUE !!" : "") . PHP_EOL
+                          .  spr(16) . "\"text\" => '#$command $key=\"" . $testValue["NG"] . "\"'," . ($unDefined ? "// ToDo UNDEFINED VALUE !!" : "") . PHP_EOL
                           .  spr(16) . "\"params\" => [" . PHP_EOL
-                          .  spr(20) . "\"$key\" => '" . $testValue["OK"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
+                          .  spr(20) . "\"$key\" => '" . $testValue["NG"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL
                           .  spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
                           .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL

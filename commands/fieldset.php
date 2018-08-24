@@ -5,7 +5,7 @@ require_once("HasariusTest.php");
 use Hasarius\test\HasariusTest;
 use Hasarius\utils\HtmlValidation as HtmlValidation;
 
-class TestCommandBlockquote extends HasariusTest
+class TestCommandFieldset extends HasariusTest
 {
 
     public function provideValidateHtml4Loose()
@@ -15,9 +15,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote style="test"',
+                "text" => '#fieldset style="サンプル テキスト"',
                 "params" => [
-                    "style" => 'test',
+                    "style" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -25,7 +25,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -35,9 +35,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote class="test"',
+                "text" => '#fieldset class="sample text"',
                 "params" => [
-                    "class" => 'test',
+                    "class" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -45,7 +45,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -55,9 +55,9 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote id="サンプル テキスト"',
+                "text" => '#fieldset id="テスト"',
                 "params" => [
-                    "id" => 'サンプル テキスト',
+                    "id" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
@@ -65,7 +65,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -75,9 +75,9 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote title="sample text"',
+                "text" => '#fieldset title="テスト"',
                 "params" => [
-                    "title" => 'sample text',
+                    "title" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
@@ -85,7 +85,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -95,9 +95,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote lang="テスト"',
+                "text" => '#fieldset lang="サンプル テキスト"',
                 "params" => [
-                    "lang" => 'テスト',
+                    "lang" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -105,7 +105,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -115,9 +115,9 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote dir="rtl"',
+                "text" => '#fieldset dir="auto"',
                 "params" => [
-                    "dir" => 'rtl',
+                    "dir" => 'auto',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
@@ -125,7 +125,7 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote dir="ato"',
+                "text" => '#fieldset dir="ato"',
                 "params" => [
                     "dir" => 'ato',
                 ],
@@ -133,26 +133,7 @@ class TestCommandBlockquote extends HasariusTest
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
-            [
-                "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote cite="https://www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
-            // cite NG Case
-            [
-                "dtd" => "HTML4_LOOSE",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
+            // -- Custom Attribute
 
         ];
         return $params;
@@ -178,9 +159,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote style="sample text"',
+                "text" => '#fieldset style="テスト"',
                 "params" => [
-                    "style" => 'sample text',
+                    "style" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -188,7 +169,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -198,9 +179,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote class="テスト"',
+                "text" => '#fieldset class="sample text"',
                 "params" => [
-                    "class" => 'テスト',
+                    "class" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -208,7 +189,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -218,9 +199,9 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote id="サンプル テキスト"',
+                "text" => '#fieldset id="test"',
                 "params" => [
-                    "id" => 'サンプル テキスト',
+                    "id" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
@@ -228,7 +209,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -238,9 +219,9 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote title="サンプル テキスト"',
+                "text" => '#fieldset title="テスト"',
                 "params" => [
-                    "title" => 'サンプル テキスト',
+                    "title" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
@@ -248,7 +229,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -258,9 +239,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote lang="test"',
+                "text" => '#fieldset lang="sample text"',
                 "params" => [
-                    "lang" => 'test',
+                    "lang" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -268,7 +249,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -278,7 +259,7 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote dir="rtl"',
+                "text" => '#fieldset dir="rtl"',
                 "params" => [
                     "dir" => 'rtl',
                 ],
@@ -288,34 +269,15 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote dir="lr"',
+                "text" => '#fieldset dir="ato"',
                 "params" => [
-                    "dir" => 'lr',
+                    "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : lr" . PHP_EOL,
+                "result" => "[Validate Error] dir : ato" . PHP_EOL,
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
-            [
-                "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote cite="../script/sample.js"',
-                "params" => [
-                    "cite" => '../script/sample.js',    // URI
-                ],
-                "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
-            // cite NG Case
-            [
-                "dtd" => "HTML4_STRICT",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
+            // -- Custom Attribute
 
         ];
         return $params;
@@ -341,9 +303,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote style="test"',
+                "text" => '#fieldset style="sample text"',
                 "params" => [
-                    "style" => 'test',
+                    "style" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -351,7 +313,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -361,9 +323,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote class="sample text"',
+                "text" => '#fieldset class="test"',
                 "params" => [
-                    "class" => 'sample text',
+                    "class" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -371,7 +333,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -381,7 +343,7 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote id="sample text"',
+                "text" => '#fieldset id="sample text"',
                 "params" => [
                     "id" => 'sample text',
                 ],
@@ -391,7 +353,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -401,9 +363,9 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote title="テスト"',
+                "text" => '#fieldset title="test"',
                 "params" => [
-                    "title" => 'テスト',
+                    "title" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
@@ -411,7 +373,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -421,9 +383,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote lang="sample text"',
+                "text" => '#fieldset lang="サンプル テキスト"',
                 "params" => [
-                    "lang" => 'sample text',
+                    "lang" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -431,7 +393,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -441,9 +403,9 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote dir="ltr"',
+                "text" => '#fieldset dir="rtl"',
                 "params" => [
-                    "dir" => 'ltr',
+                    "dir" => 'rtl',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
@@ -451,34 +413,15 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote dir="ato"',
+                "text" => '#fieldset dir="lr"',
                 "params" => [
-                    "dir" => 'ato',
+                    "dir" => 'lr',
                 ],
-                "result" => "[Validate Error] dir : ato" . PHP_EOL,
+                "result" => "[Validate Error] dir : lr" . PHP_EOL,
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
-            [
-                "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote cite="../script/sample.js"',
-                "params" => [
-                    "cite" => '../script/sample.js',    // URI
-                ],
-                "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
-            // cite NG Case
-            [
-                "dtd" => "HTML4_FRAME",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
+            // -- Custom Attribute
 
         ];
         return $params;
@@ -504,9 +447,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote style="sample text"',
+                "text" => '#fieldset style="テスト"',
                 "params" => [
-                    "style" => 'sample text',
+                    "style" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -514,7 +457,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -524,9 +467,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote class="テスト"',
+                "text" => '#fieldset class="サンプル テキスト"',
                 "params" => [
-                    "class" => 'テスト',
+                    "class" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -534,7 +477,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -544,9 +487,9 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote id="テスト"',
+                "text" => '#fieldset id="sample text"',
                 "params" => [
-                    "id" => 'テスト',
+                    "id" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
@@ -554,7 +497,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -564,9 +507,9 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote title="サンプル テキスト"',
+                "text" => '#fieldset title="テスト"',
                 "params" => [
-                    "title" => 'サンプル テキスト',
+                    "title" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
@@ -574,7 +517,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -584,9 +527,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote lang="テスト"',
+                "text" => '#fieldset lang="サンプル テキスト"',
                 "params" => [
-                    "lang" => 'テスト',
+                    "lang" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -594,7 +537,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -604,9 +547,9 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote dir="rtl"',
+                "text" => '#fieldset dir="auto"',
                 "params" => [
-                    "dir" => 'rtl',
+                    "dir" => 'auto',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
@@ -614,7 +557,7 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote dir="ato"',
+                "text" => '#fieldset dir="ato"',
                 "params" => [
                     "dir" => 'ato',
                 ],
@@ -622,26 +565,7 @@ class TestCommandBlockquote extends HasariusTest
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
-            [
-                "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote cite="../script/sample.js"',
-                "params" => [
-                    "cite" => '../script/sample.js',    // URI
-                ],
-                "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
-            // cite NG Case
-            [
-                "dtd" => "XHTML1_LOOSE",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
+            // -- Custom Attribute
 
         ];
         return $params;
@@ -667,7 +591,7 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote style="sample text"',
+                "text" => '#fieldset style="sample text"',
                 "params" => [
                     "style" => 'sample text',
                 ],
@@ -677,7 +601,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -687,9 +611,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote class="テスト"',
+                "text" => '#fieldset class="サンプル テキスト"',
                 "params" => [
-                    "class" => 'テスト',
+                    "class" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -697,7 +621,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -707,9 +631,9 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote id="テスト"',
+                "text" => '#fieldset id="sample text"',
                 "params" => [
-                    "id" => 'テスト',
+                    "id" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
@@ -717,7 +641,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -727,7 +651,7 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote title="テスト"',
+                "text" => '#fieldset title="テスト"',
                 "params" => [
                     "title" => 'テスト',
                 ],
@@ -737,7 +661,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -747,9 +671,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote lang="sample text"',
+                "text" => '#fieldset lang="テスト"',
                 "params" => [
-                    "lang" => 'sample text',
+                    "lang" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -757,7 +681,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -767,7 +691,7 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote dir="auto"',
+                "text" => '#fieldset dir="auto"',
                 "params" => [
                     "dir" => 'auto',
                 ],
@@ -777,34 +701,15 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote dir="lr"',
+                "text" => '#fieldset dir="ato"',
                 "params" => [
-                    "dir" => 'lr',
+                    "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : lr" . PHP_EOL,
+                "result" => "[Validate Error] dir : ato" . PHP_EOL,
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
-            [
-                "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote cite="../script/sample.js"',
-                "params" => [
-                    "cite" => '../script/sample.js',    // URI
-                ],
-                "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
-            // cite NG Case
-            [
-                "dtd" => "XHTML1_STRICT",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
+            // -- Custom Attribute
 
         ];
         return $params;
@@ -830,9 +735,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote style="テスト"',
+                "text" => '#fieldset style="sample text"',
                 "params" => [
-                    "style" => 'テスト',
+                    "style" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -840,7 +745,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -850,9 +755,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote class="sample text"',
+                "text" => '#fieldset class="テスト"',
                 "params" => [
-                    "class" => 'sample text',
+                    "class" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -860,7 +765,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -870,7 +775,7 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote id="test"',
+                "text" => '#fieldset id="test"',
                 "params" => [
                     "id" => 'test',
                 ],
@@ -880,7 +785,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -890,9 +795,9 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote title="sample text"',
+                "text" => '#fieldset title="サンプル テキスト"',
                 "params" => [
-                    "title" => 'sample text',
+                    "title" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
@@ -900,7 +805,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -910,7 +815,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote lang="test"',
+                "text" => '#fieldset lang="test"',
                 "params" => [
                     "lang" => 'test',
                 ],
@@ -920,7 +825,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -930,9 +835,9 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote dir="auto"',
+                "text" => '#fieldset dir="ltr"',
                 "params" => [
-                    "dir" => 'auto',
+                    "dir" => 'ltr',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
@@ -940,34 +845,15 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote dir="rl"',
+                "text" => '#fieldset dir="ato"',
                 "params" => [
-                    "dir" => 'rl',
+                    "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => "[Validate Error] dir : ato" . PHP_EOL,
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
-            [
-                "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote cite="https://www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
-            // cite NG Case
-            [
-                "dtd" => "XHTML1_FRAME",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
+            // -- Custom Attribute
 
         ];
         return $params;
@@ -993,9 +879,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote style="テスト"',
+                "text" => '#fieldset style="test"',
                 "params" => [
-                    "style" => 'テスト',
+                    "style" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -1003,7 +889,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -1013,9 +899,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote class="テスト"',
+                "text" => '#fieldset class="test"',
                 "params" => [
-                    "class" => 'テスト',
+                    "class" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -1023,7 +909,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -1033,9 +919,9 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote id="テスト"',
+                "text" => '#fieldset id="sample text"',
                 "params" => [
-                    "id" => 'テスト',
+                    "id" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
@@ -1043,7 +929,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -1053,9 +939,9 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote title="test"',
+                "text" => '#fieldset title="テスト"',
                 "params" => [
-                    "title" => 'test',
+                    "title" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
@@ -1063,7 +949,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -1073,9 +959,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote lang="test"',
+                "text" => '#fieldset lang="sample text"',
                 "params" => [
-                    "lang" => 'test',
+                    "lang" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -1083,7 +969,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -1093,9 +979,9 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote dir="ltr"',
+                "text" => '#fieldset dir="auto"',
                 "params" => [
-                    "dir" => 'ltr',
+                    "dir" => 'auto',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
@@ -1103,34 +989,15 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "XHTML1_1",
-                "text" => '#blockquote dir="rl"',
+                "text" => '#fieldset dir="ato"',
                 "params" => [
-                    "dir" => 'rl',
+                    "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => "[Validate Error] dir : ato" . PHP_EOL,
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
-            [
-                "dtd" => "XHTML1_1",
-                "text" => '#blockquote cite="../script/sample.js"',
-                "params" => [
-                    "cite" => '../script/sample.js',    // URI
-                ],
-                "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
-            // cite NG Case
-            [
-                "dtd" => "XHTML1_1",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
-                "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
-                ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
-            ],
+            // -- Custom Attribute
 
         ];
         return $params;
@@ -1156,9 +1023,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote style="サンプル テキスト"',
+                "text" => '#fieldset style="テスト"',
                 "params" => [
-                    "style" => 'サンプル テキスト',
+                    "style" => 'テスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -1166,7 +1033,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -1176,9 +1043,9 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote class="テスト"',
+                "text" => '#fieldset class="サンプル テキスト"',
                 "params" => [
-                    "class" => 'テスト',
+                    "class" => 'サンプル テキスト',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
@@ -1186,7 +1053,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -1196,7 +1063,7 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote id="sample text"',
+                "text" => '#fieldset id="sample text"',
                 "params" => [
                     "id" => 'sample text',
                 ],
@@ -1206,7 +1073,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -1216,9 +1083,9 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote title="テスト"',
+                "text" => '#fieldset title="test"',
                 "params" => [
-                    "title" => 'テスト',
+                    "title" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
@@ -1226,7 +1093,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -1236,9 +1103,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote lang="sample text"',
+                "text" => '#fieldset lang="test"',
                 "params" => [
-                    "lang" => 'sample text',
+                    "lang" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -1246,7 +1113,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -1256,7 +1123,7 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote dir="auto"',
+                "text" => '#fieldset dir="auto"',
                 "params" => [
                     "dir" => 'auto',
                 ],
@@ -1266,7 +1133,7 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote dir="lr"',
+                "text" => '#fieldset dir="lr"',
                 "params" => [
                     "dir" => 'lr',
                 ],
@@ -1274,25 +1141,66 @@ class TestCommandBlockquote extends HasariusTest
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
+            // form OK Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote cite="../script/sample.js"',
+                "text" => '#fieldset form="test"',
                 "params" => [
-                    "cite" => '../script/sample.js',    // URI
+                    "form" => 'test',    // STRING
                 ],
                 "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
+                "description" => "OK CHECK PROCESS[" . __LINE__ . "] form",
             ],
-            // cite NG Case
+            // form NG Case
             [
                 "dtd" => "HTML5",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
+                "text" => '#fieldset form=""',
                 "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
+                    "form" => '',    // STRING
                 ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
+                "result" => "[Validate Error] form : " . PHP_EOL,
+                "description" => "NG CHECK PROCESS[" . __LINE__ . "] form",
+            ],
+            // name OK Case
+            [
+                "dtd" => "HTML5",
+                "text" => '#fieldset name="サンプル テキスト"',
+                "params" => [
+                    "name" => 'サンプル テキスト',    // STRING
+                ],
+                "result" => '',
+                "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
+            ],
+            // name NG Case
+            [
+                "dtd" => "HTML5",
+                "text" => '#fieldset name=""',
+                "params" => [
+                    "name" => '',    // STRING
+                ],
+                "result" => "[Validate Error] name : " . PHP_EOL,
+                "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
+            ],
+            // -- Custom Attribute
+            // disabled OK Case
+            [
+                "dtd" => "HTML5",
+                "text" => '#fieldset disabled="off"',
+                "params" => [
+                    "disabled" => 'off',    // ON_OFF
+                ],
+                "result" => '',
+                "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
+            ],
+            // disabled NG Case
+            [
+                "dtd" => "HTML5",
+                "text" => '#fieldset disabled="om"',
+                "params" => [
+                    "disabled" => 'om',    // ON_OFF
+                ],
+                "result" => "[Validate Error] disabled : om" . PHP_EOL,
+                "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
 
         ];
@@ -1319,9 +1227,9 @@ class TestCommandBlockquote extends HasariusTest
             // style OK Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote style="サンプル テキスト"',
+                "text" => '#fieldset style="sample text"',
                 "params" => [
-                    "style" => 'サンプル テキスト',
+                    "style" => 'sample text',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
@@ -1329,7 +1237,7 @@ class TestCommandBlockquote extends HasariusTest
             // style NG Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote style=""',
+                "text" => '#fieldset style=""',
                 "params" => [
                     "style" => '',
                 ],
@@ -1339,7 +1247,7 @@ class TestCommandBlockquote extends HasariusTest
             // class OK Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote class="テスト"',
+                "text" => '#fieldset class="テスト"',
                 "params" => [
                     "class" => 'テスト',
                 ],
@@ -1349,7 +1257,7 @@ class TestCommandBlockquote extends HasariusTest
             // class NG Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote class=""',
+                "text" => '#fieldset class=""',
                 "params" => [
                     "class" => '',
                 ],
@@ -1359,7 +1267,7 @@ class TestCommandBlockquote extends HasariusTest
             // id OK Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote id="test"',
+                "text" => '#fieldset id="test"',
                 "params" => [
                     "id" => 'test',
                 ],
@@ -1369,7 +1277,7 @@ class TestCommandBlockquote extends HasariusTest
             // id NG Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote id=""',
+                "text" => '#fieldset id=""',
                 "params" => [
                     "id" => '',
                 ],
@@ -1379,7 +1287,7 @@ class TestCommandBlockquote extends HasariusTest
             // title OK Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote title="サンプル テキスト"',
+                "text" => '#fieldset title="サンプル テキスト"',
                 "params" => [
                     "title" => 'サンプル テキスト',
                 ],
@@ -1389,7 +1297,7 @@ class TestCommandBlockquote extends HasariusTest
             // title NG Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote title=""',
+                "text" => '#fieldset title=""',
                 "params" => [
                     "title" => '',
                 ],
@@ -1399,9 +1307,9 @@ class TestCommandBlockquote extends HasariusTest
             // lang OK Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote lang="テスト"',
+                "text" => '#fieldset lang="test"',
                 "params" => [
-                    "lang" => 'テスト',
+                    "lang" => 'test',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
@@ -1409,7 +1317,7 @@ class TestCommandBlockquote extends HasariusTest
             // lang NG Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote lang=""',
+                "text" => '#fieldset lang=""',
                 "params" => [
                     "lang" => '',
                 ],
@@ -1419,9 +1327,9 @@ class TestCommandBlockquote extends HasariusTest
             // dir OK Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote dir="rtl"',
+                "text" => '#fieldset dir="auto"',
                 "params" => [
-                    "dir" => 'rtl',
+                    "dir" => 'auto',
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
@@ -1429,33 +1337,74 @@ class TestCommandBlockquote extends HasariusTest
             // dir NG Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote dir="lr"',
+                "text" => '#fieldset dir="ato"',
                 "params" => [
-                    "dir" => 'lr',
+                    "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : lr" . PHP_EOL,
+                "result" => "[Validate Error] dir : ato" . PHP_EOL,
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
-            // cite OK Case
+            // form OK Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote cite="https://www.teleios.jp/img/sample.jpg"',
+                "text" => '#fieldset form="sample text"',
                 "params" => [
-                    "cite" => 'https://www.teleios.jp/img/sample.jpg',    // URI
+                    "form" => 'sample text',    // STRING
                 ],
                 "result" => '',
-                "description" => "OK CHECK PROCESS[" . __LINE__ . "] cite",
+                "description" => "OK CHECK PROCESS[" . __LINE__ . "] form",
             ],
-            // cite NG Case
+            // form NG Case
             [
                 "dtd" => "HTML5_1",
-                "text" => '#blockquote cite="https://80:www.teleios.jp/img/sample.jpg"',
+                "text" => '#fieldset form=""',
                 "params" => [
-                    "cite" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
+                    "form" => '',    // STRING
                 ],
-                "result" => "[Validate Error] cite : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
-                "description" => "NG CHECK PROCESS[" . __LINE__ . "] cite",
+                "result" => "[Validate Error] form : " . PHP_EOL,
+                "description" => "NG CHECK PROCESS[" . __LINE__ . "] form",
+            ],
+            // name OK Case
+            [
+                "dtd" => "HTML5_1",
+                "text" => '#fieldset name="サンプル テキスト"',
+                "params" => [
+                    "name" => 'サンプル テキスト',    // STRING
+                ],
+                "result" => '',
+                "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
+            ],
+            // name NG Case
+            [
+                "dtd" => "HTML5_1",
+                "text" => '#fieldset name=""',
+                "params" => [
+                    "name" => '',    // STRING
+                ],
+                "result" => "[Validate Error] name : " . PHP_EOL,
+                "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
+            ],
+            // -- Custom Attribute
+            // disabled OK Case
+            [
+                "dtd" => "HTML5_1",
+                "text" => '#fieldset disabled="on"',
+                "params" => [
+                    "disabled" => 'on',    // ON_OFF
+                ],
+                "result" => '',
+                "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
+            ],
+            // disabled NG Case
+            [
+                "dtd" => "HTML5_1",
+                "text" => '#fieldset disabled="om"',
+                "params" => [
+                    "disabled" => 'om',    // ON_OFF
+                ],
+                "result" => "[Validate Error] disabled : om" . PHP_EOL,
+                "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
 
         ];
