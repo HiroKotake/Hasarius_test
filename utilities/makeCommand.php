@@ -104,7 +104,7 @@ foreach ($defs["DocumentType"] as $dtd) {
         $testData .= spr(12) . '// -- Tag Attribute' . PHP_EOL;
         foreach ($defs["TagAttributes"][$dtd] as $key => $attr) {
             $unDefined = false;
-            if ($attr["CompareType"] == "DEFINED") {
+            if ($attr["CompareType"] == "DEFINED" || $attr["CompareType"] == "NONE") {
                 $testValue = CompareSample::getTestCaseData($attr["Value"], $dtd);
                 if (empty($testValue)) {
                     echo "[FATAL ERROR] KEY IS NOT EXISTS !! - " . $attr["Value"] . PHP_EOL;
@@ -161,10 +161,16 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(16) . "\"text\" => '#$command $key=\"" . $testValue["NG"] . "\"'," . ($unDefined ? "// ToDo UNDEFINED VALUE !!" : "") . PHP_EOL
                           .  spr(16) . "\"params\" => [" . PHP_EOL
                           .  spr(20) . "\"$key\" => '" . $testValue["NG"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
-                          .  spr(16) . "]," . PHP_EOL
-                          .  spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
-                          .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
-                          .  spr(12) . "]," . PHP_EOL;
+                          .  spr(16) . "]," . PHP_EOL;
+                if ($attr["CompareType"] == "DEFINED" || $attr["CompareType"] == "VALUE") {
+                    $testData .= spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
+                              .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
+                              .  spr(12) . "]," . PHP_EOL;
+                } else {
+                    $testData .= spr(16) . "\"result\" => ''" . PHP_EOL
+                              .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
+                              .  spr(12) . "]," . PHP_EOL;
+                }
             }
         }
     }
@@ -174,7 +180,7 @@ foreach ($defs["DocumentType"] as $dtd) {
         foreach ($defs["CustomAttributes"] as $key => $attr) {
             if (in_array($dtd, $attr["DocumentType"])) {
                 $unDefined = false;
-                if ($attr["CompareType"] == "DEFINED") {
+                if ($attr["CompareType"] == "DEFINED" || $attr["CompareType"] == "NONE") {
                     $testValue = CompareSample::getTestCaseData($attr["Value"], $dtd);
                     if (empty($testValue)) {
                         echo "[FATAL ERROR] KEY IS NOT EXISTS !! - " . $attr["Value"] . PHP_EOL;
@@ -205,10 +211,16 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(16) . "\"text\" => '#$command $key=\"" . $testValue["NG"] . "\"'," . ($unDefined ? "// ToDo UNDEFINED VALUE !!" : "") . PHP_EOL
                           .  spr(16) . "\"params\" => [" . PHP_EOL
                           .  spr(20) . "\"$key\" => '" . $testValue["NG"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
-                          .  spr(16) . "]," . PHP_EOL
-                          .  spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
-                          .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
-                          .  spr(12) . "]," . PHP_EOL;
+                          .  spr(16) . "]," . PHP_EOL;
+                if ($attr["CompareType"] == "DEFINED" || $attr["CompareType"] == "VALUE") {
+                    $testData .= spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
+                              .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
+                              .  spr(12) . "]," . PHP_EOL;
+                } else {
+                    $testData .= spr(16) . "\"result\" => ''," . PHP_EOL
+                              .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
+                              .  spr(12) . "]," . PHP_EOL;
+                }
             }
         }
     }

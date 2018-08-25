@@ -440,7 +440,7 @@ class TestCommandFrame extends HasariusTest
             // frameborder OK Case
             [
                 "dtd" => "XHTML1_FRAME",
-                "text" => '#frame frameborder="0"',// ToDo UNDEFINED VALUE !!
+                "text" => '#frame frameborder="0"',
                 "params" => [
                     "frameborder" => '0',    // /^(0|1)$/
                 ],
