@@ -15,5 +15,8 @@
         <testsuite name="command">
             <directory suffix=".php">commands</directory>
         </testsuite>
+        <testsuite name="decoration">
+            <directory suffix=".php">decorations</directory>
+        </testsuite>
     </testsuites>
 </phpunit>

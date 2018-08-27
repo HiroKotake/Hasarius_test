@@ -1,0 +1,26 @@
+
+    public function provideValidate@DTD@()
+    {
+        $params = [
+@DATA@
+        ];
+        return $params;
+    }
+
+    /** @dataProvider provideValidate@DTD@ */
+    public function testValidate@DTD@(string $dtd, string $text, string $decoration, array $params, string $result, string $description)
+    {
+        $this->changeDtd($dtd);
+        $data = $this->makeDecorationCase($text);
+        if (empty($data["data"])) {
+            echo PHP_EOL . '[ERROR] PARAMETER IS NOT NULL !!' . PHP_EOL;
+            return;
+        }
+        $decoData = $data["data"][0];
+        // パラメータ存在チェック
+        $this->assertEquals($decoration, $decoData["decorationName"]);
+        $this->assertEquals($params, $decoData["params"]);
+        // パラメータ記述確認チェック
+        $validated = HtmlValidation::validate($decoData['decoration'], $decoData["params"]);
+        $this->assertEquals($result, $validated);
+    }

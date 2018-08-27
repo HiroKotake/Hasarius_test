@@ -10,7 +10,7 @@ class CompareSample
             "OK" => ["submit","reset","button"],
             "NG" => ["submt","resat","botton"],
         ],
-        "BLEAR_TYPE" => [
+        "CLEAR_TYPE" => [
             "OK" => ["left","right","all","none"],
             "NG" => ["lft","raght","al","non"],
         ],
@@ -333,6 +333,11 @@ class CompareSample
         }
 
         return $testCase;
+    }
+
+    public static function makeId(string $prefix = 'id'): string
+    {
+        return $prefix . mt_rand(1, 1000) . '_' . mt_rand(1, 100);
     }
 
     public static function showSampleData()

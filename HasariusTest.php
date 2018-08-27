@@ -3,6 +3,7 @@ namespace Hasarius\test;
 
 use Hasarius\utils\Parser;
 use Hasarius\system\Command;
+use Hasarius\system\Decoration;
 use PHPUnit\Framework\TestCase;
 
 abstract class HasariusTest extends TestCase
@@ -54,26 +55,41 @@ abstract class HasariusTest extends TestCase
             "command" => null
         ];
         // パース
-        $data = Parser::analyzeModifier($text);
-        // クラス生成
-        $command = $data['command'];
-        $fileDir = HASARIUS_DECORATION_DIR
-                  . DIRECTORY_SEPARATOR
-                  . $command;
-        $filename = $fileDir
-                  . DIRECTORY_SEPARATOR
-                  . $command . ".php";
-        if (file_exists($filename)) {
-            $command = "Hasarius\\decorations\\Decorate" . $command;
-            $commandObject = new $command();
-        } elseif (file_exists($fileDir)) {
-            $commandObject = new Command($fileDir . DIRECTORY_SEPARATOR . 'define.json');
-        } else {
-            throw new \Exception("[ERROR] Command is not defined. (" . $command . ")");
+        $vessel = Parser::analyzeLine($text);
+        $data = [];
+        $modifires = $vessel->getModifiers();
+        foreach ($modifires as $deco) {
+            $codata = [
+                "text" => $deco,
+                "decorationName" => null,
+                "params" => null,
+                "decoration" => null,
+            ];
+            $work = Parser::analyzeModifier($deco);
+            $codata["decorationName"] = $work["command"];
+            $codata["params"] = $work["params"];
+            // クラス生成
+            $decoration = $work['command'];
+            $fileDir = HASARIUS_DECORATION_DIR
+                      . DIRECTORY_SEPARATOR
+                      . $decoration;
+            $filename = $fileDir
+                      . DIRECTORY_SEPARATOR
+                      . $decoration . ".php";
+            if (file_exists($filename)) {
+                $decortion = "Hasarius\\decorations\\Decorate" . $decoration;
+                $decorationObject = new $decortion();
+            } elseif (file_exists($fileDir)) {
+                $decorationObject = new Decoration($fileDir . DIRECTORY_SEPARATOR . 'define.json');
+            } else {
+                throw new \Exception("[ERROR] Decoration is not defined. (" . $decoration. ")");
+            }
+            $codata["decoration"] = $decorationObject;
+            $data[] = $codata;
         }
 
+        $result["vessel"] = $vessel;
         $result["data"] = $data;
-        $result["command"] = $commandObject;
 
         return $result;
     }
