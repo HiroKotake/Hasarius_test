@@ -18,5 +18,8 @@
         <testsuite name="decoration">
             <directory suffix=".php">decorations</directory>
         </testsuite>
+        <testsuite name="libs">
+            <directory suffix=".php">libs</directory>
+        </testsuite>
     </testsuites>
 </phpunit>

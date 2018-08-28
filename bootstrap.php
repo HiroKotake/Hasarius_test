@@ -16,4 +16,4 @@ define('HASARIUS_DECORATION_DIR', HASARIUS_BASE_DIR . DIRECTORY_SEPARATOR . 'dec
 
 // (ダミー) 作成するDocument Type を設定
 define('CURRENT_DOCUMENT_DATA', 'HTML4_LOOSE');
-define('HEAD_DocumentType', 'HTML4_LOOSE');
+define('MAKE_DocumentType', 'HTML4_LOOSE');

@@ -341,18 +341,18 @@ class TestParser extends TestCase
 
         // ファイルインクルードチェック：　ファイル名のみ
         $params[] = [
-            'source' => '@include ' . __DIR__ . DIRECTORY_SEPARATOR . 'validater.php',
+            'source' => '@include ' . __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'validater.php',
             'expects' => [
-                'filename' => __DIR__ . DIRECTORY_SEPARATOR . 'validater.php',
+                'filename' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'validater.php',
                 'comment' => null
             ]
         ];
 
         // ファイルインクルードチェック：　ファイル名のみ、コメント付き
         $params[] = [
-            'source' => '@include ' . __DIR__ . DIRECTORY_SEPARATOR . 'validater.php // ホゲ',
+            'source' => '@include ' . __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'validater.php // ホゲ',
             'expects' => [
-                'filename' => __DIR__ . DIRECTORY_SEPARATOR . 'validater.php',
+                'filename' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'validater.php',
                 'comment' => 'ホゲ'
             ]
         ];

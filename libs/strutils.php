@@ -2,7 +2,7 @@
 
 namespace Hasarius\test\utils;
 
-use Hasarius\utils\StrUtils;
+use jp\teleios\libs\StrUtils;
 use PHPUnit\Framework\TestCase;
 
 class TestStrUtils extends TestCase
