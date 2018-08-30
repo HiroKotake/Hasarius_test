@@ -12,6 +12,12 @@ class TestMakeConst extends TestCase
         $param = [
             [
                 "consts" => [
+                    "SYSTEM" => [
+                        "COMMENT_LINE" => 10000,
+                        "EMPTY_LINE" => 10001,
+                        "BLOCK_CLOSE" => 10002,
+                        "TEXT_ONLY" => 10003,
+                    ],
                     "HEAD_META" => [
                         "ContentType" => [
                             "attribute" => "http-equiv",
@@ -76,6 +82,10 @@ class TestMakeConst extends TestCase
                         "Date" => [
                             "attribute" => "name",
                             "origin" => "date"
+                        ],
+                        "Property" => [
+                            "attribute" => "property",
+                            "origin" => "property"
                         ]
                     ],
                     "SCRIPT" => [
@@ -169,14 +179,20 @@ class TestMakeConst extends TestCase
                         "ReplyTo" => "info_hasarius&#64;teleios.jp",
                         "Copyright" => "teleios",
                         "Generator" => "hasarius",
-                        "Date" => "2018-08-31T12:00:00+09:00"
+                        "Date" => "2018-08-31T12:00:00+09:00",
+                        "Property" => [
+                            "og:type" => "article",
+                            "og:title" => "test",
+                            "og:site_name" =>  "sample page",
+                            "og:url" => "http://www.teleios.jp/index.html"
+                        ]
                     ],
                     "MAKE_Script" => [
-                        ["type" =>"", "src" =>""],
-                        ["src" =>""]
+                        ["type" => "text/javascript", "src" => "script/sample.js"],
+                        ["src" => "script/common.js"]
                     ],
                     "MAKE_Link" => [
-                        ["rel" =>"", "href" =>""]
+                        ["rel" => "stylesheet", "href" => "css/style.css"]
                     ],
                     "MAKE_WriteTargetDir" => "/var/www/html/test",
                     "MAKE_UseHashFileName" => 0,
@@ -199,5 +215,159 @@ class TestMakeConst extends TestCase
                 $this->assertEquals($defined["user"][$key], $value);
             }
         }
+    }
+
+    public function provideGetDocumentType()
+    {
+        $params = [];
+        $params[] = [
+            "type" => "HTML4_LOOSE",
+            "dtd" => "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">"
+        ];
+        $params[] = [
+            "type" => "HTML4_STRICT",
+            "dtd" => "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\">"
+        ];
+        $params[] = [
+            "type" => "HTML4_FRAME",
+            "dtd" => "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\">"
+        ];
+        $params[] = [
+            "type" => "XHTML1_LOOSE",
+            "dtd" => "<?xml version=\"1.0\" encoding=\"" . MAKE_Charset . "\"?>" . PHP_EOL
+                   . "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+        ];
+        $params[] = [
+            "type" => "XHTML1_STRICT",
+            "dtd" => "<?xml version=\"1.0\" encoding=\"" . MAKE_Charset . "\"?>" . PHP_EOL
+                   . "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
+        ];
+        $params[] = [
+            "type" => "XHTML1_FRAME",
+            "dtd" => "<?xml version=\"1.0\" encoding=\"" . MAKE_Charset . "\"?>" . PHP_EOL
+                   . "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"
+        ];
+        $params[] = [
+            "type" => "XHTML1_1",
+            "dtd" => "<?xml version=\"1.0\" encoding=\"" . MAKE_Charset . "\"?>" . PHP_EOL
+                   . "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"
+        ];
+        $params[] = [
+            "type" => "HTML5",
+            "dtd" => "<!DOCTYPE html>"
+        ];
+        $params[] = [
+            "type" => "HTML5_1",
+            "dtd" => "<!DOCTYPE html>"
+        ];
+        return $params;
+    }
+    /** @dataProvider provideGetDocumentType */
+    public function testGetDocumentType($type, $dtd)
+    {
+        $currentType = MAKE_DocumentType;
+        uopz_redefine('MAKE_DocumentType', $type);
+        $makedDtd = MakeConst::getDocumentType();
+        $this->assertEquals($dtd, $makedDtd);
+        uopz_redefine('MAKE_DocumentType', $currentType);
+    }
+
+    public function provideMakeMetaParts()
+    {
+        $params = [];
+        $params[] = [
+            "type" => "HTML4_LOOSE",
+            "list" => [
+                '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">',
+                '<meta http-equiv="Pragma" content="no-cache">',
+                '<meta http-equiv="Cache-Control" content="no-cache">',
+                '<meta http-equiv="Expires" content="86400">',
+                '<meta http-equiv="Content-Script-Type" content="text/javascript">',
+                '<meta http-equiv="Content-Style-Type" content="text/css">',
+                '<meta http-equiv="Refresh" content="300">',
+                '<meta http-equiv="Jump" content="60;https://www.teleios.jp/sample/">',
+                '<meta name="keywords" content="ホームページ,HTML,CSS,JavaScript">',
+                '<meta name="description" content="文書にHTML生成に必要なアイテムを追加し、HTMLを生成します。">',
+                '<meta name="ROBOTS" content="ALL">',
+                '<meta name="author" content="Takahiro Kotake">',
+                '<meta name="reply-to" content="info_hasarius&#64;teleios.jp">',
+                '<meta name="copyright" content="teleios">',
+                '<meta name="generator" content="hasarius">',
+                '<meta name="date" content="2018-08-31T12:00:00+09:00">',
+                '<meta property="og:type" content="article">',
+                '<meta property="og:title" content="test">',
+                '<meta property="og:site_name" content="sample page">',
+                '<meta property="og:url" content="http://www.teleios.jp/index.html">',
+            ],
+        ];
+        $params[] = [
+            "type" => "HTML5_1",
+            "list" => [
+                '<meta http-equiv="Pragma" content="no-cache">',
+                '<meta http-equiv="Cache-Control" content="no-cache">',
+                '<meta http-equiv="Expires" content="86400">',
+                '<meta http-equiv="Content-Script-Type" content="text/javascript">',
+                '<meta http-equiv="Content-Style-Type" content="text/css">',
+                '<meta http-equiv="Refresh" content="300">',
+                '<meta http-equiv="Jump" content="60;https://www.teleios.jp/sample/">',
+                '<meta name="keywords" content="ホームページ,HTML,CSS,JavaScript">',
+                '<meta name="description" content="文書にHTML生成に必要なアイテムを追加し、HTMLを生成します。">',
+                '<meta name="ROBOTS" content="ALL">',
+                '<meta name="author" content="Takahiro Kotake">',
+                '<meta name="reply-to" content="info_hasarius&#64;teleios.jp">',
+                '<meta name="copyright" content="teleios">',
+                '<meta name="generator" content="hasarius">',
+                '<meta name="date" content="2018-08-31T12:00:00+09:00">',
+                '<meta property="og:type" content="article">',
+                '<meta property="og:title" content="test">',
+                '<meta property="og:site_name" content="sample page">',
+                '<meta property="og:url" content="http://www.teleios.jp/index.html">',
+            ],
+        ];
+        return $params;
+    }
+    /** @dataProvider provideMakeMetaParts */
+    public function testMakeMetaParts($type, $list)
+    {
+        $currentType = MAKE_DocumentType;
+        uopz_redefine('MAKE_DocumentType', $type);
+        $metaList = MakeConst::makeMetaParts();
+        $this->assertEquals($list, $metaList);
+        uopz_redefine('MAKE_DocumentType', $currentType);
+    }
+
+    public function provideMakeScriptParts()
+    {
+        $params = [];
+        $params[] = [
+            "list" => [
+                '<script type="text/javascript" src="script/sample.js"></script>',
+                '<script src="script/common.js"></script>',
+            ]
+        ];
+        return $params;
+    }
+    /** @dataProvider provideMakeScriptParts */
+    public function testMakeScriptParts($list)
+    {
+        $scriptList = MakeConst::makeScriptParts();
+        $this->assertEquals($list, $scriptList);
+    }
+
+    public function provideMakeLinkParts()
+    {
+        $params = [];
+        $params[] = [
+            "list" => [
+                '<link rel="stylesheet" href="css/style.css">',
+            ]
+        ];
+        return $params;
+    }
+    /** @dataProvider provideMakeLinkParts */
+    public function testMakeLinkParts($list)
+    {
+        $linkList = MakeConst::makeLinkParts();
+        $this->assertEquals($list, $linkList);
     }
 }

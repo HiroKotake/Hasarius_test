@@ -52,7 +52,7 @@ class TestParser extends TestCase
         $command[] = [
             'source' => 'div is block tag.',
             'expects' => [
-                'command' => "",
+                'command' => SYSTEM["TEXT_ONLY"],
                 'paramaters' => [],
                 'modifiers' => [],
                 'text' => 'div is block tag.',
@@ -67,7 +67,7 @@ class TestParser extends TestCase
         $command[] = [
             'source' => 'div is @b block tag@.',
             'expects' => [
-                'command' => "",
+                'command' => SYSTEM["TEXT_ONLY"],
                 'paramaters' => [],
                 'modifiers' => [
                     '@b block tag@'
@@ -189,7 +189,7 @@ class TestParser extends TestCase
         $command[] = [
             'source' => '## // Block Close',
             'expects' => [
-                'command' => Parser::SYSTEM_BLOCK_CLOSE,
+                'command' => SYSTEM["BLOCK_CLOSE"],
                 'paramaters' => [],
                 'modifiers' => [],
                 'text' => '',
@@ -204,7 +204,7 @@ class TestParser extends TestCase
         $command[] = [
             'source' => ' // Block Close',
             'expects' => [
-                'command' => Parser::SYSTEM_COMMENT_LINE,
+                'command' => SYSTEM["COMMENT_LINE"],
                 'paramaters' => [],
                 'modifiers' => [],
                 'text' => '',
@@ -219,7 +219,7 @@ class TestParser extends TestCase
         $command[] = [
             'source' => '',
             'expects' => [
-                'command' => Parser::SYSTEM_EMPTY_LINE,
+                'command' => SYSTEM["EMPTY_LINE"],
                 'paramaters' => [],
                 'modifiers' => [],
                 'text' => '',
@@ -234,7 +234,7 @@ class TestParser extends TestCase
         $command[] = [
             'source' => "\t 　",
             'expects' => [
-                'command' => Parser::SYSTEM_EMPTY_LINE,
+                'command' => SYSTEM["EMPTY_LINE"],
                 'paramaters' => [],
                 'modifiers' => [],
                 'text' => '',
@@ -253,13 +253,13 @@ class TestParser extends TestCase
     public function testAnalyzeLine($source, $expects, $subCommand, $commandHead, $attributeDelime)
     {
         if (empty($subCommand) && empty($commandHead) && empty($attributeDelime)) {
-            $vessel = Parser::analyzeLine($source);
+            $vessel = Parser::analyzeLine(["lineText" => $source, "lineNumber" => 1]);
         } else if (!empty($subCommand) && empty($commandHead) && empty($attributeDelime)) {
-            $vessel = Parser::analyzeLine($source, $subCommand);
+            $vessel = Parser::analyzeLine(["lineText" => $source, "lineNumber" => 1], $subCommand);
         } else if (!empty($commandHead) && empty($attributeDelime)) {
-            $vessel = Parser::analyzeLine($source, $subCommand, $commandHead);
+            $vessel = Parser::analyzeLine(["lineText" => $source, "lineNumber" => 1], $subCommand, $commandHead);
         } else {
-            $vessel = Parser::analyzeLine($source, $subCommand, $commandHead, $attributeDelime);
+            $vessel = Parser::analyzeLine(["lineText" => $source, "lineNumber" => 1], $subCommand, $commandHead, $attributeDelime);
         }
 
         if (array_key_exists('command', $expects)) {
@@ -329,7 +329,7 @@ class TestParser extends TestCase
     /** @dataProvider provideAnalyzeLineSubCommand */
     public function testAnalyzeLineSubCommand($source, $expects, $subCommand)
     {
-        $result = Parser::analyzeLine($source, $subCommand);
+        $result = Parser::analyzeLine(["lineText" => $source, "lineNumber" => 1], $subCommand);
         $this->assertEquals($result->isSubCommand(), true);
         $this->assertEquals($result->getCommand(), $expects["command"]);
         $this->assertEquals($result->getText(), $expects["text"]);

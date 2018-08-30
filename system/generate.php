@@ -1,7 +1,9 @@
 <?php
 namespace Hasarius\test\system;
 
+use jp\teleios\libs\StrUtils;
 use Hasarius\system\Generate;
+use Hasarius\system\Vessel;
 use PHPUnit\Framework\TestCase;
 
 class TestGenerate extends TestCase
@@ -118,30 +120,151 @@ class TestGenerate extends TestCase
 
     public function provideAnalyze()
     {
-        $params = [
-            // div要素でチェック
-            [
-                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_100.txt",
-                "lines" => []
+        $params = [];
+        // div要素でチェック
+        $params[] = [
+            "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_100.txt",
+            "lines" => [
+                [
+                    "Command"  => "div",
+                    "TagOpen"  => "<div id=\"id_1\" style=\"width:100%;\">",
+                    "TagClose" => "</div>",
+                    "Text" => "",
+                ],
+                [
+                    "Command"  => "div",
+                    "TagOpen"  => "<div id=\"id_2\" style=\"float:left;width:50%;\" align=\"center\">",
+                    "TagClose" => "</div>",
+                    "Text" => "",
+                ],
+                [
+                    "Command"  => SYSTEM["TEXT_ONLY"],
+                    "TagOpen"  => "",
+                    "TagClose" => "",
+                    "Text" => "左",
+                ],
+                [
+                    "Command"  => SYSTEM["BLOCK_CLOSE"],
+                    "TagOpen"  => "",
+                    "TagClose" => "",
+                    "Text" => "",
+                ],
+                [
+                    "Command"  => "div",
+                    "TagOpen"  => "<div id=\"id_5\" style=\"float:right;width:50%;\" align=\"center\">",
+                    "TagClose" => "</div>",
+                    "Text" => "",
+                ],
+                [
+                    "Command"  => SYSTEM["TEXT_ONLY"],
+                    "TagOpen"  => "",
+                    "TagClose" => "",
+                    "Text" => "右",
+                ],
+                [
+                    "Command"  => SYSTEM["BLOCK_CLOSE"],
+                    "TagOpen"  => "",
+                    "TagClose" => "",
+                    "Text" => "",
+                ],
+                [
+                    "Command"  => SYSTEM["BLOCK_CLOSE"],
+                    "TagOpen"  => "",
+                    "TagClose" => "",
+                    "Text" => "",
+                ],
             ],
+            "CloserStack" => [
+                [
+                    "TagClose" => "</div>",
+                    "SubCommand" => [],
+                    "Indent" => 2,
+                ],
+                [
+                    "TagClose" => "</div>",
+                    "SubCommand" => [],
+                    "Indent" => 3,
+                ],
+                [
+                    "TagClose" => "</div>",
+                    "SubCommand" => [],
+                    "Indent" => 3,
+                ],
+            ]
         ];
 
         return $params;
     }
 
     /** @dataProvider provideAnalyze */
-    public function testAnalyze(string $source, array $lines)
+    public function testAnalyze(string $source, array $lines, array $closerStack)
     {
         $genarate = new Generate();
         $genarate->initialize();
         $preprocessed = $genarate->preprocess($source);
         $genarate->analyze($preprocessed);
-        /*
-        $analyzed = $genarate->getVesselContainer;
-echo PHP_EOL;
-echo '[DEBUG] PREPROCESS :' . PHP_EOL;
-var_dump($preprocessed);
-echo PHP_EOL;
-        */
+        $analyzed = $genarate->getVesselContainer();
+
+        $resultLines = [];
+        foreach ($analyzed as $vessel) {
+            $resultLines[] = [
+                "Command"  => $vessel->getCommand(),
+                "TagOpen"  => $vessel->getTagOpen(),
+                "TagClose" => $vessel->getTagClose(),
+                "Text"     => $vessel->getText(),
+            ];
+        }
+
+        $this->assertEquals($resultLines, $lines);
+
+        $genarate->transform();
+        $resultCloserStack = $genarate->getCloserStack();
+        $checkStack = [];
+        foreach ($resultCloserStack as $stack) {
+            $checkStack[] = [
+                "TagClose"   => $stack->getCloseTag(),
+                "SubCommand" => $stack->getSubCommand(),
+                "Indent"     => $stack->getIndentNumber(),
+            ];
+        }
+
+        $this->assertEquals($checkStack, $closerStack);
+    }
+
+    public function provideSubGenerateBody()
+    {
+        $params = [];
+        // div要素でチェック
+        $params[] = [
+            "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_100.txt",
+            "docs" => [
+                StrUtils::indentRepeat(2) . "<div id=\"id_1\" style=\"width:100%;\">",
+                StrUtils::indentRepeat(3) . "<div id=\"id_2\" style=\"float:left;width:50%;\" align=\"center\">",
+                StrUtils::indentRepeat(4) . "左",
+                StrUtils::indentRepeat(3) . "</div>",
+                StrUtils::indentRepeat(3) . "<div id=\"id_5\" style=\"float:right;width:50%;\" align=\"center\">",
+                StrUtils::indentRepeat(4) . "右",
+                StrUtils::indentRepeat(3) . "</div>",
+                StrUtils::indentRepeat(2) . "</div>",
+                StrUtils::indentRepeat(1) . "</body>",
+                "</html>",
+            ],
+        ];
+
+        return $params;
+    }
+
+    /** @dataProvider provideSubGenerateBody */
+    public function testSubGenerateBody(string $source, array $docs)
+    {
+        $genarate = new Generate();
+        $genarate->initialize();
+        $preprocessed = $genarate->preprocess($source);
+        $genarate->analyze($preprocessed);
+        $genarate->transform();
+        $genarate->subGenerateBody();
+        $documentWork = $genarate->getDocumentWork();
+
+        $this->assertEquals($documentWork, $docs);
     }
 }

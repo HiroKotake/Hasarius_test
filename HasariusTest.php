@@ -20,7 +20,7 @@ abstract class HasariusTest extends TestCase
             "command" => null
         ];
         // パース
-        $vessel = Parser::analyzeLine($text);
+        $vessel = Parser::analyzeLine(["lineText" => $text, "lineNumber" => 1]);
         // クラス生成
         $fileDir = HASARIUS_COMMANDS_DIR
                   . DIRECTORY_SEPARATOR
@@ -55,7 +55,7 @@ abstract class HasariusTest extends TestCase
             "command" => null
         ];
         // パース
-        $vessel = Parser::analyzeLine($text);
+        $vessel = Parser::analyzeLine(["lineText" => $text, "lineNumber" => 1]);
         $data = [];
         $modifires = $vessel->getModifiers();
         foreach ($modifires as $deco) {
