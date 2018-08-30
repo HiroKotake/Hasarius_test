@@ -1,0 +1,2 @@
+@include test_002_1.txt     // 変数定義
+@include test_002_2.txt     // 本文

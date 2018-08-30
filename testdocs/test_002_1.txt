@@ -1,0 +1,2 @@
+@var ITEM_NAME="Hasarius"   // アプリケーション名
+@var TARGET="HTML"

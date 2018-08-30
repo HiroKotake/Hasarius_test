@@ -8,6 +8,7 @@ use Hasarius\system\MakeConst;
 $autoloader = new Autoloader();
 $autoloader->autoload();
 
+define("FLAG_UNIT_TEST", 1);
 define("HASARIUS_TEST_DIR", __DIR__);
 define('HASARIUS_BASE_DIR', HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Hasarius");
 MakeConst::load(HASARIUS_BASE_DIR . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "const.json");

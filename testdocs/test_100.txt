@@ -1,0 +1,8 @@
+#div style="width:100%;"
+#div style="float:left;width:50%;" align="center"
+左
+##
+#div style="float:right;width:50%;" align="center"
+右
+##
+##
