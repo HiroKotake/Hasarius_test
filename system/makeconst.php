@@ -294,15 +294,12 @@ class TestMakeConst extends TestCase
                 '<meta name="copyright" content="teleios">',
                 '<meta name="generator" content="hasarius">',
                 '<meta name="date" content="2018-08-31T12:00:00+09:00">',
-                '<meta property="og:type" content="article">',
-                '<meta property="og:title" content="test">',
-                '<meta property="og:site_name" content="sample page">',
-                '<meta property="og:url" content="http://www.teleios.jp/index.html">',
             ],
         ];
         $params[] = [
             "type" => "HTML5_1",
             "list" => [
+                '<meta charset="utf-8">',
                 '<meta http-equiv="Pragma" content="no-cache">',
                 '<meta http-equiv="Cache-Control" content="no-cache">',
                 '<meta http-equiv="Expires" content="86400">',
@@ -382,7 +379,7 @@ class TestMakeConst extends TestCase
         // head
         $params[] = [
             "setting" => "head",
-            "result" => "<html>"
+            "result" => "<html class=\"HtmlClassName\">"
         ];
         return $params;
     }
