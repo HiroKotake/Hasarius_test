@@ -370,4 +370,54 @@ class TestMakeConst extends TestCase
         $linkList = MakeConst::makeLinkParts();
         $this->assertEquals($list, $linkList);
     }
+
+    public function provideGetTagHtml()
+    {
+        $params = [];
+        // html
+        $params[] = [
+            "setting" => "html",
+            "result" => "<html class=\"HtmlClassName\" prefix=\"og:http://ogp.me/ns#\" lang=\"ja\">"
+        ];
+        // head
+        $params[] = [
+            "setting" => "head",
+            "result" => "<html>"
+        ];
+        return $params;
+    }
+    /** @dataProvider provideGetTagHtml */
+    public function testGetTagHtml($setting, $result)
+    {
+        $basePosition = MAKE_BasePosition;
+        uopz_redefine('MAKE_BasePosition', $setting);
+        $tagHtml = MakeConst::getTagHtml();
+        $this->assertEquals($tagHtml, $result);
+        uopz_redefine('MAKE_BasePosition', $basePosition);
+    }
+
+    public function provideGetTagHead()
+    {
+        $params = [];
+        // html
+        $params[] = [
+            "setting" => "html",
+            "result" => "<head>"
+        ];
+        // head
+        $params[] = [
+            "setting" => "head",
+            "result" => "<head prefix=\"og:http://ogp.me/ns#\" lang=\"ja\">"
+        ];
+        return $params;
+    }
+    /** @dataProvider provideGetTagHead */
+    public function testGetTagHead($setting, $result)
+    {
+        $basePosition = MAKE_BasePosition;
+        uopz_redefine('MAKE_BasePosition', $setting);
+        $tagHtml = MakeConst::getTagHead();
+        $this->assertEquals($tagHtml, $result);
+        uopz_redefine('MAKE_BasePosition', $basePosition);
+    }
 }

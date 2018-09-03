@@ -112,8 +112,8 @@ class TestGenerate extends TestCase
     /** @dataProvider providerPreprocess */
     public function testPreprocess(string $source, array $lines)
     {
-        $genarate = new Generate();
-        $result = $genarate->preprocess($source);
+        $generate = new Generate();
+        $result = $generate->preprocess($source);
 
         $this->assertEquals($result, $lines);
     }
@@ -199,11 +199,11 @@ class TestGenerate extends TestCase
     /** @dataProvider provideAnalyze */
     public function testAnalyze(string $source, array $lines, array $closerStack)
     {
-        $genarate = new Generate();
-        $genarate->initialize();
-        $preprocessed = $genarate->preprocess($source);
-        $genarate->analyze($preprocessed);
-        $analyzed = $genarate->getVesselContainer();
+        $generate = new Generate();
+        $generate->initialize();
+        $preprocessed = $generate->preprocess($source);
+        $generate->analyze($preprocessed);
+        $analyzed = $generate->getVesselContainer();
 
         $resultLines = [];
         foreach ($analyzed as $vessel) {
@@ -217,8 +217,8 @@ class TestGenerate extends TestCase
 
         $this->assertEquals($resultLines, $lines);
 
-        $genarate->transform();
-        $resultCloserStack = $genarate->getCloserStack();
+        $generate->transform();
+        $resultCloserStack = $generate->getCloserStack();
         $checkStack = [];
         foreach ($resultCloserStack as $stack) {
             $checkStack[] = [
@@ -238,6 +238,7 @@ class TestGenerate extends TestCase
         $params[] = [
             "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_100.txt",
             "docs" => [
+                StrUtils::indentRepeat(1) . "<body class=\"BodyClassName1\">",
                 StrUtils::indentRepeat(2) . "<div id=\"id_1\" style=\"width:100%;\">",
                 StrUtils::indentRepeat(3) . "<div id=\"id_2\" style=\"float:left;width:50%;\" align=\"center\">",
                 StrUtils::indentRepeat(4) . "左",
@@ -257,14 +258,76 @@ class TestGenerate extends TestCase
     /** @dataProvider provideSubGenerateBody */
     public function testSubGenerateBody(string $source, array $docs)
     {
-        $genarate = new Generate();
-        $genarate->initialize();
-        $preprocessed = $genarate->preprocess($source);
-        $genarate->analyze($preprocessed);
-        $genarate->transform();
-        $genarate->subGenerateBody();
-        $documentWork = $genarate->getDocumentWork();
+        $generate = new Generate();
+        $generate->initialize();
+        $preprocessed = $generate->preprocess($source);
+        $generate->analyze($preprocessed);
+        $generate->transform();
+        $generate->subGenerateBody();
+        $documentWork = $generate->getDocumentWork();
 
         $this->assertEquals($documentWork, $docs);
+    }
+
+    public function provideGenerateHtml()
+    {
+        $params = [
+            // 平文 (html)
+            [
+                "BasePosition" => "html",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_000.txt",
+                "lines" => [
+                ]
+            ],
+            // 平文 (head)
+            [
+                "BasePosition" => "head",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_000.txt",
+                "lines" => [
+                ]
+            ],
+            // 平文 (html) + 変数あり
+            [
+                "BasePosition" => "html",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_001.txt",
+                "lines" => [
+                ]
+            ],
+            // 平文 (head) + 変数あり
+            [
+                "BasePosition" => "head",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_001.txt",
+                "lines" => [
+                ]
+            ],
+            // @include (html)
+            [
+                "BasePosition" => "html",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_002.txt",
+                "lines" => [
+                ]
+            ],
+            // @include (head)
+            [
+                "BasePosition" => "head",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_002.txt",
+                "lines" => [
+                ]
+            ],
+        ];
+        return $params;
+    }
+
+    /** @dataProvider provideGenerateHtml */
+    public function testGenerateHtml(string $source, array $lines)
+    {
+        $generate = new Generate();
+        $result = $generate->preprocess($source);
+        $generate->analyze($result);
+        $generate->transform();
+        $generate->generate();
+        $html = $generate->getDocumentWork();
+
+//        var_dump($html);
     }
 }
