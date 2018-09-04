@@ -280,7 +280,7 @@ class TestGenerate extends TestCase
                 "lines" => [
                     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">",
                     "<html>",
-                    "    <head>",
+                    "    <head lang=\"ja\">",
                     "        <title>Default Page Title</title>",
                     "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">",
                     "        <meta http-equiv=\"Pragma\" content=\"no-cache\">",
@@ -358,7 +358,7 @@ class TestGenerate extends TestCase
                 "lines" => [
                     "<?xml version=\"1.0\" encoding=\"utf-8\"?>" . PHP_EOL ."<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">",
                     "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
-                    "    <head>",
+                    "    <head xml:lang=\"ja\">",
                     "        <title>Default Page Title</title>",
                     "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">",
                     "        <meta http-equiv=\"Pragma\" content=\"no-cache\">",
@@ -397,7 +397,7 @@ class TestGenerate extends TestCase
                 "lines" => [
                     "<?xml version=\"1.0\" encoding=\"utf-8\"?>" . PHP_EOL . "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">",
                     "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
-                    "    <head lang=\"ja\">",
+                    "    <head xml:lang=\"ja\">",
                     "        <title>Default Page Title</title>",
                     "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">",
                     "        <meta http-equiv=\"Pragma\" content=\"no-cache\">",
@@ -535,5 +535,78 @@ class TestGenerate extends TestCase
         uopz_redefine("MAKE_DocumentType", $currentDocumentType);
 
         $this->assertEquals($html, $lines);
+    }
+
+    public function provideMake()
+    {
+        $params = [
+            // 平文 (html)
+            [
+                "DocumentType" => "HTML4_LOOSE",
+                "BasePosition" => "html",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_000.txt",
+                "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp.html",
+                "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_000" . DIRECTORY_SEPARATOR . "html4_loose_html.html",
+            ],
+            // 平文 (head)
+            [
+                "DocumentType" => "HTML4_LOOSE",
+                "BasePosition" => "head",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_000.txt",
+                "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp.html",
+                "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_000" . DIRECTORY_SEPARATOR . "html4_loose_head.html",
+            ],
+            // 平文 (html) + 変数あり
+            [
+                "DocumentType" => "XHTML1_1",
+                "BasePosition" => "html",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_001.txt",
+                "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp.html",
+                "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_001" . DIRECTORY_SEPARATOR . "html1_1_html.html",
+            ],
+            // 平文 (head) + 変数あり
+            [
+                "DocumentType" => "XHTML1_1",
+                "BasePosition" => "head",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_001.txt",
+                "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp.html",
+                "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_001" . DIRECTORY_SEPARATOR . "xhtml1_1_head.html",
+            ],
+            // @include (html)
+            [
+                "DocumentType" => "HTML5",
+                "BasePosition" => "html",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_002.txt",
+                "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp.html",
+                "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_002" . DIRECTORY_SEPARATOR . "html5_html.html",
+            ],
+            [
+                "DocumentType" => "HTML5",
+                "BasePosition" => "head",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_002.txt",
+                "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp.html",
+                "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_002" . DIRECTORY_SEPARATOR . "html5_head.html",
+            ],
+        ];
+
+        return $params;
+    }
+    /** @dataProvider provideMake */
+    public function testMake(string $documentType, string $basePosition, string $source, string $saveFile, string $compareFile)
+    {
+        $currentDocumentType = MAKE_DocumentType;
+        $currentBasePosition = MAKE_BasePosition;
+        uopz_redefine("MAKE_DocumentType", $documentType);
+        uopz_redefine("MAKE_BasePosition", $basePosition);
+        $generate = new Generate();
+        $result = $generate->preprocess($source);
+        $generate->analyze($result);
+        $generate->transform();
+        $generate->generate();
+        $generate->saveHtml($saveFile);
+        uopz_redefine("MAKE_BasePosition", $currentBasePosition);
+        uopz_redefine("MAKE_DocumentType", $currentDocumentType);
+
+        $this->assertFileEquals($saveFile, $compareFile);
     }
 }
