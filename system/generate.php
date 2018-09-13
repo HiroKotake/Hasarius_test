@@ -587,6 +587,13 @@ class TestGenerate extends TestCase
                 "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp.html",
                 "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "compareFiles" . DIRECTORY_SEPARATOR . "test_002" . DIRECTORY_SEPARATOR . "html5_head.html",
             ],
+            [
+                "DocumentType" => "HTML5",
+                "BasePosition" => "html",
+                "source" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "test_200.txt",
+                "saveFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "temp_table.html",
+                "compareFile" => HASARIUS_TEST_DIR . DIRECTORY_SEPARATOR . "testdocs" . DIRECTORY_SEPARATOR . "compareFiles" . DIRECTORY_SEPARATOR . "test_200" . DIRECTORY_SEPARATOR . "html5_html.html",
+            ],
         ];
 
         return $params;
@@ -599,6 +606,7 @@ class TestGenerate extends TestCase
         uopz_redefine("MAKE_DocumentType", $documentType);
         uopz_redefine("MAKE_BasePosition", $basePosition);
         $generate = new Generate();
+        $generate->initialize();
         $result = $generate->preprocess($source);
         $generate->analyze($result);
         $generate->transform();
