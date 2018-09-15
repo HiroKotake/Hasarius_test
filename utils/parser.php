@@ -291,7 +291,7 @@ class TestParser extends TestCase
                 'text' => "test",
                 'comment' => '',
             ],
-            'subCommand' => [["symbol" => "|", "DefaultAttrs" => [], "Description" => "カラム指定"]],
+            'subCommand' => [["Symbol" => "|", "Tag" => "td", "Description" => "カラム指定"]],
         ];
 
         // サブコマンド
@@ -303,8 +303,8 @@ class TestParser extends TestCase
                 'comment' => '',
             ],
             'subCommand' => [
-                ["symbol" => "!", "DefaultAttrs" => [], "Description" => "見出しカラム指定"],
-                ["symbol" => "|", "DefaultAttrs" => [], "Description" => "カラム指定"]
+                ["Symbol" => "!", "Tag" => "th", "Description" => "見出しカラム指定"],
+                ["Symbol" => "|", "Tag" => "td", "Description" => "カラム指定"]
             ],
         ];
 
@@ -317,9 +317,9 @@ class TestParser extends TestCase
                 'comment' => '',
             ],
             'subCommand' => [
-                ["symbol" => "+", "DefaultAttrs" => [], "Description" => "行指定"],
-                ["symbol" => "!", "DefaultAttrs" => [], "Description" => "見出しカラム指定"],
-                ["symbol" => "|", "DefaultAttrs" => [], "Description" => "カラム指定"]
+                ["Symbol" => "+", "Tag" => "tr", "Description" => "行指定"],
+                ["Symbol" => "!", "Tag" => "th", "Description" => "見出しカラム指定"],
+                ["Symbol" => "|", "Tag" => "td", "Description" => "カラム指定"]
             ],
         ];
 
