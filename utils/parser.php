@@ -22,7 +22,7 @@ class TestParser extends TestCase
                     'name' => 'div test'
                 ],
                 'modifiers' => [],
-                'text' => 'div is block tag.',
+                'text' => ' div is block tag.',
                 'comment' => '',
             ],
             'subCommand' => [],
@@ -40,7 +40,7 @@ class TestParser extends TestCase
                     'class' => 'block_left',
                 ],
                 'modifiers' => [],
-                'text' => 'name="div test" div is block tag.',
+                'text' => ' name="div test" div is block tag.',
                 'comment' => '',
             ],
             'subCommand' => [],
@@ -93,7 +93,7 @@ class TestParser extends TestCase
                 'modifiers' => [
                     '@b block tag@'
                 ],
-                'text' => 'div is @b block tag@.',
+                'text' => ' div is @b block tag@.',
                 'comment' => '',
             ],
             'subCommand' => [],
@@ -114,7 +114,7 @@ class TestParser extends TestCase
                 'modifiers' => [
                     '@b block tag@'
                 ],
-                'text' => 'div is @b block tag@.',
+                'text' => ' div is @b block tag@.',
                 'comment' => 'Test Case Comment',
             ],
             'subCommand' => [],
@@ -135,7 +135,7 @@ class TestParser extends TestCase
                 'modifiers' => [
                     '@b block tag@'
                 ],
-                'text' => '// div is @b block tag@.',
+                'text' => ' // div is @b block tag@.',
                 'comment' => 'Test Case Comment',
             ],
             'subCommand' => [],
@@ -156,7 +156,7 @@ class TestParser extends TestCase
                 'modifiers' => [
                     '@b block tag@'
                 ],
-                'text' => '// div is @b block tag@.',
+                'text' => ' // div is @b block tag@.',
                 'comment' => 'Test Case Comment',
             ],
             'subCommand' => [],
@@ -177,7 +177,7 @@ class TestParser extends TestCase
                 'modifiers' => [
                     '@b block tag@'
                 ],
-                'text' => '// div is @b block tag@.',
+                'text' => ' // div is @b block tag@.',
                 'comment' => 'Test Case Comment',
             ],
             'subCommand' => [],

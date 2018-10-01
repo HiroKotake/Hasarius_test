@@ -1771,10 +1771,10 @@ class TestCommandInput extends HasariusTest
             ],
             // type OK Case
             [
-                "dtd" => "XHTML1_STRICT",
-                "text" => '#input type="datetime-lcoal"',
+                "dtd" => "HTML5_1",
+                "text" => '#input type="datetime-local"',
                 "params" => [
-                    "type" => 'datetime-lcoal',    // INPUT_TYPE
+                    "type" => 'datetime-local',    // INPUT_TYPE
                 ],
                 "result" => '',
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
@@ -2983,7 +2983,7 @@ class TestCommandInput extends HasariusTest
             // -- Tag Attribute
             // type OK Case
             [
-                "dtd" => "HTML5",
+                "dtd" => "HTML5_1",
                 "text" => '#input type="week"',
                 "params" => [
                     "type" => 'week',    // INPUT_TYPE

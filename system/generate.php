@@ -173,23 +173,6 @@ class TestGenerate extends TestCase
                     "TagClose" => "",
                     "Text" => "",
                 ],
-            ],
-            "CloserStack" => [
-                [
-                    "TagClose" => "</div>",
-                    "SubCommand" => [],
-                    "Indent" => 2,
-                ],
-                [
-                    "TagClose" => "</div>",
-                    "SubCommand" => [],
-                    "Indent" => 3,
-                ],
-                [
-                    "TagClose" => "</div>",
-                    "SubCommand" => [],
-                    "Indent" => 3,
-                ],
             ]
         ];
 
@@ -197,7 +180,7 @@ class TestGenerate extends TestCase
     }
 
     /** @dataProvider provideAnalyze */
-    public function testAnalyze(string $source, array $lines, array $closerStack)
+    public function testAnalyze(string $source, array $lines)
     {
         $generate = new Generate();
         $generate->initialize();
@@ -216,19 +199,6 @@ class TestGenerate extends TestCase
         }
 
         $this->assertEquals($resultLines, $lines);
-
-        $generate->transform();
-        $resultCloserStack = $generate->getCloserStack();
-        $checkStack = [];
-        foreach ($resultCloserStack as $stack) {
-            $checkStack[] = [
-                "TagClose"   => $stack->getCloseTag(),
-                "SubCommand" => $stack->getSubCommand(),
-                "Indent"     => $stack->getIndentNumber(),
-            ];
-        }
-
-        $this->assertEquals($checkStack, $closerStack);
     }
 
     public function provideSubGenerateBody()
