@@ -113,7 +113,8 @@ class TestGenerate extends TestCase
     public function testPreprocess(string $source, array $lines)
     {
         $generate = new Generate();
-        $result = $generate->preprocess($source);
+        $params = ["Source" => $source];
+        $result = $generate->preprocess($params);
 
         $this->assertEquals($result, $lines);
     }
@@ -184,7 +185,8 @@ class TestGenerate extends TestCase
     {
         $generate = new Generate();
         $generate->initialize();
-        $preprocessed = $generate->preprocess($source);
+        $params = ["Source" => $source];
+        $preprocessed = $generate->preprocess($params);
         $generate->analyze($preprocessed);
         $analyzed = $generate->getVesselContainer();
 
@@ -230,7 +232,8 @@ class TestGenerate extends TestCase
     {
         $generate = new Generate();
         $generate->initialize();
-        $preprocessed = $generate->preprocess($source);
+        $params = ["Source" => $source];
+        $preprocessed = $generate->preprocess($params);
         $generate->analyze($preprocessed);
         $generate->transform();
         $generate->subGenerateBody();
@@ -496,7 +499,8 @@ class TestGenerate extends TestCase
         uopz_redefine("MAKE_DocumentType", $documentType);
         uopz_redefine("MAKE_BasePosition", $basePosition);
         $generate = new Generate();
-        $result = $generate->preprocess($source);
+        $params = ["Source" => $source];
+        $result = $generate->preprocess($params);
         $generate->analyze($result);
         $generate->transform();
         $generate->generate();
@@ -577,7 +581,8 @@ class TestGenerate extends TestCase
         uopz_redefine("MAKE_BasePosition", $basePosition);
         $generate = new Generate();
         $generate->initialize();
-        $result = $generate->preprocess($source);
+        $params = ["Source" => $source];
+        $result = $generate->preprocess($params);
         $generate->analyze($result);
         $generate->transform();
         $generate->generate();
