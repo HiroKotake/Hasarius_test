@@ -63,6 +63,22 @@ class TestParser extends TestCase
             'attributeDelime' => null,
         ];
 
+        // 本文のみ：インラインコマンド付き閉じコマンドなし
+        $command[] = [
+            'source' => 'div is @b block tag.',
+            'expects' => [
+                'command' => SYSTEM["TEXT_ONLY"],
+                'paramaters' => [],
+                'modifiers' => [
+                ],
+                'text' => 'div is @b block tag.',
+                'comment' => '',
+            ],
+            'subCommand' => [],
+            'commandHead' => null,
+            'attributeDelime' => null,
+        ];
+
         // 本文のみ：インラインコマンド付き
         $command[] = [
             'source' => 'div is @b block tag@.',
@@ -115,6 +131,68 @@ class TestParser extends TestCase
                     '@b block tag@'
                 ],
                 'text' => ' div is @b block tag@.',
+                'comment' => 'Test Case Comment',
+            ],
+            'subCommand' => [],
+            'commandHead' => null,
+            'attributeDelime' => null,
+        ];
+
+        // コマンド、属性、本文(インラインコマンド付き)、コメント
+        $command[] = [
+            'source' => '#div id="test" class="block_left" name="div test" [@b style="color: red;" TEST@] div is @b block tag@. // Test Case Comment',
+            'expects' => [
+                'command' => 'div',
+                'paramaters' => [
+                    'id' => 'test',
+                    'class' => 'block_left',
+                    'name' => 'div test'
+                ],
+                'modifiers' => [
+                    '@b style="color: red;" TEST@',
+                    '@b block tag@'
+                ],
+                'text' => ' [@b style="color: red;" TEST@] div is @b block tag@.',
+                'comment' => 'Test Case Comment',
+            ],
+            'subCommand' => [],
+            'commandHead' => null,
+            'attributeDelime' => null,
+        ];
+
+        // コマンド、属性、本文(インラインコマンド付き(エスケープシーケンスで無効化))、コメント
+        $command[] = [
+            'source' => '#div id="test" class="block_left" name="div test" div is \@b block tag\@. // Test Case Comment',
+            'expects' => [
+                'command' => 'div',
+                'paramaters' => [
+                    'id' => 'test',
+                    'class' => 'block_left',
+                    'name' => 'div test'
+                ],
+                'modifiers' => [
+                ],
+                'text' => ' div is @b block tag@.',
+                'comment' => 'Test Case Comment',
+            ],
+            'subCommand' => [],
+            'commandHead' => null,
+            'attributeDelime' => null,
+        ];
+
+        // コマンド、属性、本文(インラインコマンド付き(エスケープシーケンスで無効化))、コメント
+        $command[] = [
+            'source' => '#div id="test" class="block_left" name="div test" div is \@b style="color: red;" block tag\@. // Test Case Comment',
+            'expects' => [
+                'command' => 'div',
+                'paramaters' => [
+                    'id' => 'test',
+                    'class' => 'block_left',
+                    'name' => 'div test'
+                ],
+                'modifiers' => [
+                ],
+                'text' => ' div is @b style="color: red;" block tag@.',
                 'comment' => 'Test Case Comment',
             ],
             'subCommand' => [],
