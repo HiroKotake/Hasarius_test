@@ -19,7 +19,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -29,7 +29,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -39,7 +39,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -49,7 +49,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -59,7 +59,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -69,7 +69,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -79,7 +79,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -89,7 +89,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -99,7 +99,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -109,7 +109,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -119,7 +119,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'auto',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -129,7 +129,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : ato" . PHP_EOL,
+                "result" => ["[Validate Error] dir : ato" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -140,7 +140,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'reset',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -150,7 +150,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'sabumit',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : sabumit" . PHP_EOL,
+                "result" => ["[Validate Error] type : sabumit" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -160,7 +160,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -170,7 +170,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -180,7 +180,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'test',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -190,7 +190,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // size OK Case
@@ -200,7 +200,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '10',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -210,7 +210,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '16.5',    // US_NZ
                 ],
-                "result" => "[Validate Error] size : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] size : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // maxlength OK Case
@@ -220,7 +220,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '20',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // maxlength NG Case
@@ -230,7 +230,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] maxlength : 0" . PHP_EOL,
+                "result" => ["[Validate Error] maxlength : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // src OK Case
@@ -240,7 +240,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -250,7 +250,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // alt OK Case
@@ -260,7 +260,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // alt NG Case
@@ -270,7 +270,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => '',    // STRING
                 ],
-                "result" => "[Validate Error] alt : " . PHP_EOL,
+                "result" => ["[Validate Error] alt : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // usemap OK Case
@@ -280,7 +280,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // usemap NG Case
@@ -290,7 +290,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // align OK Case
@@ -300,7 +300,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'bottom',    // SIDE_ALL
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // align NG Case
@@ -310,7 +310,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'lift',    // SIDE_ALL
                 ],
-                "result" => "[Validate Error] align : lift" . PHP_EOL,
+                "result" => ["[Validate Error] align : lift" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // -- Custom Attribute
@@ -321,7 +321,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // checked NG Case
@@ -331,7 +331,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] checked : om" . PHP_EOL,
+                "result" => ["[Validate Error] checked : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // disabled OK Case
@@ -341,7 +341,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -351,7 +351,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] disabled : om" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // ismap OK Case
@@ -361,7 +361,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // ismap NG Case
@@ -371,7 +371,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] ismap : of" . PHP_EOL,
+                "result" => ["[Validate Error] ismap : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // readonly OK Case
@@ -381,7 +381,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // readonly NG Case
@@ -391,7 +391,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] readonly : of" . PHP_EOL,
+                "result" => ["[Validate Error] readonly : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
 
@@ -400,7 +400,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml4Loose */
-    public function testValidateHtml4Loose(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml4Loose(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -423,7 +423,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -433,7 +433,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -443,7 +443,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -453,7 +453,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -463,7 +463,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -473,7 +473,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -483,7 +483,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -493,7 +493,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -503,7 +503,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -513,7 +513,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -523,7 +523,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -533,7 +533,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'lr',
                 ],
-                "result" => "[Validate Error] dir : lr" . PHP_EOL,
+                "result" => ["[Validate Error] dir : lr" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -544,7 +544,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'button',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -554,7 +554,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'redio',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : redio" . PHP_EOL,
+                "result" => ["[Validate Error] type : redio" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -564,7 +564,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -574,7 +574,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -584,7 +584,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'sample text',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -594,7 +594,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // size OK Case
@@ -604,7 +604,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '4086',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -614,7 +614,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] size : 0" . PHP_EOL,
+                "result" => ["[Validate Error] size : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // maxlength OK Case
@@ -624,7 +624,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '256',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // maxlength NG Case
@@ -634,7 +634,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] maxlength : 0" . PHP_EOL,
+                "result" => ["[Validate Error] maxlength : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // src OK Case
@@ -644,7 +644,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -654,7 +654,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // alt OK Case
@@ -664,7 +664,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => 'sample text',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // alt NG Case
@@ -674,7 +674,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => '',    // STRING
                 ],
-                "result" => "[Validate Error] alt : " . PHP_EOL,
+                "result" => ["[Validate Error] alt : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // usemap OK Case
@@ -684,7 +684,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // usemap NG Case
@@ -694,7 +694,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // -- Custom Attribute
@@ -705,7 +705,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // checked NG Case
@@ -715,7 +715,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] checked : of" . PHP_EOL,
+                "result" => ["[Validate Error] checked : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // disabled OK Case
@@ -725,7 +725,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -735,7 +735,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] disabled : om" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // ismap OK Case
@@ -745,7 +745,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // ismap NG Case
@@ -755,7 +755,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] ismap : of" . PHP_EOL,
+                "result" => ["[Validate Error] ismap : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // readonly OK Case
@@ -765,7 +765,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // readonly NG Case
@@ -775,7 +775,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] readonly : of" . PHP_EOL,
+                "result" => ["[Validate Error] readonly : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
 
@@ -784,7 +784,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml4Strict */
-    public function testValidateHtml4Strict(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml4Strict(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -807,7 +807,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -817,7 +817,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -827,7 +827,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -837,7 +837,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -847,7 +847,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -857,7 +857,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -867,7 +867,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -877,7 +877,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -887,7 +887,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -897,7 +897,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -907,7 +907,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'auto',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -917,7 +917,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'rl',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => ["[Validate Error] dir : rl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -928,7 +928,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'checkbox',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -938,7 +938,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'redio',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : redio" . PHP_EOL,
+                "result" => ["[Validate Error] type : redio" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -948,7 +948,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -958,7 +958,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -968,7 +968,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -978,7 +978,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // size OK Case
@@ -988,7 +988,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '256',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -998,7 +998,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '16.5',    // US_NZ
                 ],
-                "result" => "[Validate Error] size : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] size : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // maxlength OK Case
@@ -1008,7 +1008,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '10',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // maxlength NG Case
@@ -1018,7 +1018,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '16.5',    // US_NZ
                 ],
-                "result" => "[Validate Error] maxlength : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] maxlength : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // src OK Case
@@ -1028,7 +1028,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -1038,7 +1038,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // alt OK Case
@@ -1048,7 +1048,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // alt NG Case
@@ -1058,7 +1058,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => '',    // STRING
                 ],
-                "result" => "[Validate Error] alt : " . PHP_EOL,
+                "result" => ["[Validate Error] alt : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // usemap OK Case
@@ -1068,7 +1068,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // usemap NG Case
@@ -1078,7 +1078,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // align OK Case
@@ -1088,7 +1088,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'right',    // SIDE_ALL
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // align NG Case
@@ -1098,7 +1098,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'tap',    // SIDE_ALL
                 ],
-                "result" => "[Validate Error] align : tap" . PHP_EOL,
+                "result" => ["[Validate Error] align : tap" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // -- Custom Attribute
@@ -1109,7 +1109,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // checked NG Case
@@ -1119,7 +1119,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] checked : of" . PHP_EOL,
+                "result" => ["[Validate Error] checked : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // disabled OK Case
@@ -1129,7 +1129,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -1139,7 +1139,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] disabled : of" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // ismap OK Case
@@ -1149,7 +1149,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // ismap NG Case
@@ -1159,7 +1159,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] ismap : om" . PHP_EOL,
+                "result" => ["[Validate Error] ismap : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // readonly OK Case
@@ -1169,7 +1169,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // readonly NG Case
@@ -1179,7 +1179,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] readonly : om" . PHP_EOL,
+                "result" => ["[Validate Error] readonly : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
 
@@ -1188,7 +1188,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml4Frame */
-    public function testValidateHtml4Frame(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml4Frame(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -1211,7 +1211,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -1221,7 +1221,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -1231,7 +1231,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -1241,7 +1241,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -1251,7 +1251,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -1261,7 +1261,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -1271,7 +1271,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -1281,7 +1281,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -1291,7 +1291,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -1301,7 +1301,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -1311,7 +1311,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'auto',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -1321,7 +1321,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : ato" . PHP_EOL,
+                "result" => ["[Validate Error] dir : ato" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -1332,7 +1332,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'application/pdf',    // MIME
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // accept NG Case
@@ -1342,7 +1342,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'imag/jpeg',    // MIME
                 ],
-                "result" => "[Validate Error] accept : imag/jpeg" . PHP_EOL,
+                "result" => ["[Validate Error] accept : imag/jpeg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // type OK Case
@@ -1352,7 +1352,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'file',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -1362,7 +1362,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'redio',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : redio" . PHP_EOL,
+                "result" => ["[Validate Error] type : redio" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -1372,7 +1372,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'sample text',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -1382,7 +1382,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -1392,7 +1392,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'sample text',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -1402,7 +1402,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // size OK Case
@@ -1412,7 +1412,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '20',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -1422,7 +1422,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '16.5',    // US_NZ
                 ],
-                "result" => "[Validate Error] size : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] size : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // maxlength OK Case
@@ -1432,7 +1432,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '4086',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // maxlength NG Case
@@ -1442,7 +1442,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '16.5',    // US_NZ
                 ],
-                "result" => "[Validate Error] maxlength : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] maxlength : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // src OK Case
@@ -1452,7 +1452,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -1462,7 +1462,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // alt OK Case
@@ -1472,7 +1472,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // alt NG Case
@@ -1482,7 +1482,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => '',    // STRING
                 ],
-                "result" => "[Validate Error] alt : " . PHP_EOL,
+                "result" => ["[Validate Error] alt : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // usemap OK Case
@@ -1492,7 +1492,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // usemap NG Case
@@ -1502,7 +1502,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // align OK Case
@@ -1512,7 +1512,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'bottom',    // SIDE_ALL
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // align NG Case
@@ -1522,7 +1522,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'tap',    // SIDE_ALL
                 ],
-                "result" => "[Validate Error] align : tap" . PHP_EOL,
+                "result" => ["[Validate Error] align : tap" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // checked OK Case
@@ -1532,7 +1532,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'checked',    // /^checked$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // checked NG Case
@@ -1542,7 +1542,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'checkd',    // /^checked$/i
                 ],
-                "result" => "[Validate Error] checked : checkd" . PHP_EOL,
+                "result" => ["[Validate Error] checked : checkd" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // disabled OK Case
@@ -1552,7 +1552,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'disabled',    // /^disabled$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -1562,7 +1562,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'diabled',    // /^disabled$/i
                 ],
-                "result" => "[Validate Error] disabled : diabled" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : diabled" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // ismap OK Case
@@ -1572,7 +1572,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'ismap',    // /^ismap$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // ismap NG Case
@@ -1582,7 +1582,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'ismp',    // /^ismap$/i
                 ],
-                "result" => "[Validate Error] ismap : ismp" . PHP_EOL,
+                "result" => ["[Validate Error] ismap : ismp" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // readonly OK Case
@@ -1592,7 +1592,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'readonly',    // /^readonly$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // readonly NG Case
@@ -1602,7 +1602,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'readnly',    // /^readonly$/i
                 ],
-                "result" => "[Validate Error] readonly : readnly" . PHP_EOL,
+                "result" => ["[Validate Error] readonly : readnly" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // -- Custom Attribute
@@ -1612,7 +1612,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateXhtml1Loose */
-    public function testValidateXhtml1Loose(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateXhtml1Loose(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -1635,7 +1635,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -1645,7 +1645,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -1655,7 +1655,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -1665,7 +1665,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -1675,7 +1675,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -1685,7 +1685,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -1695,7 +1695,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -1705,7 +1705,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -1715,7 +1715,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -1725,7 +1725,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -1735,7 +1735,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -1745,7 +1745,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'rl',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => ["[Validate Error] dir : rl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -1756,7 +1756,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'text/plain',    // MIME
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // accept NG Case
@@ -1766,7 +1766,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'vide/mpeg',    // MIME
                 ],
-                "result" => "[Validate Error] accept : vide/mpeg" . PHP_EOL,
+                "result" => ["[Validate Error] accept : vide/mpeg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // type OK Case
@@ -1776,7 +1776,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'datetime-local',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -1786,7 +1786,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'redio',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : redio" . PHP_EOL,
+                "result" => ["[Validate Error] type : redio" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -1796,7 +1796,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -1806,7 +1806,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -1816,7 +1816,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -1826,7 +1826,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // size OK Case
@@ -1836,7 +1836,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '256',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -1846,7 +1846,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] size : 0" . PHP_EOL,
+                "result" => ["[Validate Error] size : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // maxlength OK Case
@@ -1856,7 +1856,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '10',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // maxlength NG Case
@@ -1866,7 +1866,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] maxlength : 0" . PHP_EOL,
+                "result" => ["[Validate Error] maxlength : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // src OK Case
@@ -1876,7 +1876,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -1886,7 +1886,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // alt OK Case
@@ -1896,7 +1896,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // alt NG Case
@@ -1906,7 +1906,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => '',    // STRING
                 ],
-                "result" => "[Validate Error] alt : " . PHP_EOL,
+                "result" => ["[Validate Error] alt : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // usemap OK Case
@@ -1916,7 +1916,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // usemap NG Case
@@ -1926,7 +1926,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // checked OK Case
@@ -1936,7 +1936,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'checked',    // /^checked$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // checked NG Case
@@ -1946,7 +1946,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'checkd',    // /^checked$/i
                 ],
-                "result" => "[Validate Error] checked : checkd" . PHP_EOL,
+                "result" => ["[Validate Error] checked : checkd" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // disabled OK Case
@@ -1956,7 +1956,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'disabled',    // /^disabled$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -1966,7 +1966,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'dsabled',    // /^disabled$/i
                 ],
-                "result" => "[Validate Error] disabled : dsabled" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : dsabled" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // ismap OK Case
@@ -1976,7 +1976,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'ismap',    // /^ismap$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // ismap NG Case
@@ -1986,7 +1986,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'isnap',    // /^ismap$/i
                 ],
-                "result" => "[Validate Error] ismap : isnap" . PHP_EOL,
+                "result" => ["[Validate Error] ismap : isnap" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // readonly OK Case
@@ -1996,7 +1996,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'readonly',    // /^readonly$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // readonly NG Case
@@ -2006,7 +2006,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'redonly',    // /^readonly$/i
                 ],
-                "result" => "[Validate Error] readonly : redonly" . PHP_EOL,
+                "result" => ["[Validate Error] readonly : redonly" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // -- Custom Attribute
@@ -2016,7 +2016,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateXhtml1Strict */
-    public function testValidateXhtml1Strict(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateXhtml1Strict(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -2039,7 +2039,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -2049,7 +2049,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -2059,7 +2059,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -2069,7 +2069,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -2079,7 +2079,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -2089,7 +2089,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -2099,7 +2099,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -2109,7 +2109,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -2119,7 +2119,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -2129,7 +2129,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -2139,7 +2139,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'ltr',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -2149,7 +2149,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : ato" . PHP_EOL,
+                "result" => ["[Validate Error] dir : ato" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -2160,7 +2160,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'text/plain',    // MIME
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // accept NG Case
@@ -2170,7 +2170,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'aplication/pdf',    // MIME
                 ],
-                "result" => "[Validate Error] accept : aplication/pdf" . PHP_EOL,
+                "result" => ["[Validate Error] accept : aplication/pdf" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // type OK Case
@@ -2180,7 +2180,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'button',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -2190,7 +2190,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'taxt',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : taxt" . PHP_EOL,
+                "result" => ["[Validate Error] type : taxt" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -2200,7 +2200,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -2210,7 +2210,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -2220,7 +2220,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -2230,7 +2230,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // size OK Case
@@ -2240,7 +2240,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '10',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -2250,7 +2250,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] size : 0" . PHP_EOL,
+                "result" => ["[Validate Error] size : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // maxlength OK Case
@@ -2260,7 +2260,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '256',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // maxlength NG Case
@@ -2270,7 +2270,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] maxlength : 0" . PHP_EOL,
+                "result" => ["[Validate Error] maxlength : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // src OK Case
@@ -2280,7 +2280,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -2290,7 +2290,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // alt OK Case
@@ -2300,7 +2300,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => 'test',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // alt NG Case
@@ -2310,7 +2310,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => '',    // STRING
                 ],
-                "result" => "[Validate Error] alt : " . PHP_EOL,
+                "result" => ["[Validate Error] alt : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // usemap OK Case
@@ -2320,7 +2320,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // usemap NG Case
@@ -2330,7 +2330,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // align OK Case
@@ -2340,7 +2340,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'bottom',    // SIDE_ALL
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // align NG Case
@@ -2350,7 +2350,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "align" => 'light',    // SIDE_ALL
                 ],
-                "result" => "[Validate Error] align : light" . PHP_EOL,
+                "result" => ["[Validate Error] align : light" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] align",
             ],
             // checked OK Case
@@ -2360,7 +2360,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'checked',    // /^checked$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // checked NG Case
@@ -2370,7 +2370,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'check',    // /^checked$/i
                 ],
-                "result" => "[Validate Error] checked : check" . PHP_EOL,
+                "result" => ["[Validate Error] checked : check" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // disabled OK Case
@@ -2380,7 +2380,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'disabled',    // /^disabled$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -2390,7 +2390,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'disable',    // /^disabled$/i
                 ],
-                "result" => "[Validate Error] disabled : disable" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : disable" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // ismap OK Case
@@ -2400,7 +2400,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'ismap',    // /^ismap$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // ismap NG Case
@@ -2410,7 +2410,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'ifmap',    // /^ismap$/i
                 ],
-                "result" => "[Validate Error] ismap : ifmap" . PHP_EOL,
+                "result" => ["[Validate Error] ismap : ifmap" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // readonly OK Case
@@ -2420,7 +2420,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'readonly',    // /^readonly$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // readonly NG Case
@@ -2430,7 +2430,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'readonl',    // /^readonly$/i
                 ],
-                "result" => "[Validate Error] readonly : readonl" . PHP_EOL,
+                "result" => ["[Validate Error] readonly : readonl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // -- Custom Attribute
@@ -2440,7 +2440,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateXhtml1Frame */
-    public function testValidateXhtml1Frame(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateXhtml1Frame(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -2463,7 +2463,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -2473,7 +2473,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -2483,7 +2483,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -2493,7 +2493,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -2503,7 +2503,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -2513,7 +2513,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -2523,7 +2523,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -2533,7 +2533,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -2543,7 +2543,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -2553,7 +2553,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -2563,7 +2563,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'ltr',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -2573,7 +2573,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'rl',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => ["[Validate Error] dir : rl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -2584,7 +2584,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'video/mpeg',    // MIME
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // accept NG Case
@@ -2594,7 +2594,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "accept" => 'text/plin',    // MIME
                 ],
-                "result" => "[Validate Error] accept : text/plin" . PHP_EOL,
+                "result" => ["[Validate Error] accept : text/plin" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] accept",
             ],
             // type OK Case
@@ -2604,7 +2604,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'file',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -2614,7 +2614,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'sabumit',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : sabumit" . PHP_EOL,
+                "result" => ["[Validate Error] type : sabumit" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -2624,7 +2624,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'sample text',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -2634,7 +2634,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -2644,7 +2644,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -2654,7 +2654,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // size OK Case
@@ -2664,7 +2664,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '4086',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -2674,7 +2674,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "size" => '0',    // US_NZ
                 ],
-                "result" => "[Validate Error] size : 0" . PHP_EOL,
+                "result" => ["[Validate Error] size : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // maxlength OK Case
@@ -2684,7 +2684,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '256',    // US_NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // maxlength NG Case
@@ -2694,7 +2694,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "maxlength" => '16.5',    // US_NZ
                 ],
-                "result" => "[Validate Error] maxlength : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] maxlength : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] maxlength",
             ],
             // src OK Case
@@ -2704,7 +2704,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -2714,7 +2714,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // alt OK Case
@@ -2724,7 +2724,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => 'test',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // alt NG Case
@@ -2734,7 +2734,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "alt" => '',    // STRING
                 ],
-                "result" => "[Validate Error] alt : " . PHP_EOL,
+                "result" => ["[Validate Error] alt : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] alt",
             ],
             // usemap OK Case
@@ -2744,7 +2744,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // usemap NG Case
@@ -2754,7 +2754,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "usemap" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] usemap : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] usemap",
             ],
             // checked OK Case
@@ -2764,7 +2764,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'checked',    // /^checked$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // checked NG Case
@@ -2774,7 +2774,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "checked" => 'check',    // /^checked$/i
                 ],
-                "result" => "[Validate Error] checked : check" . PHP_EOL,
+                "result" => ["[Validate Error] checked : check" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] checked",
             ],
             // disabled OK Case
@@ -2784,7 +2784,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'disabled',    // /^disabled$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -2794,7 +2794,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'disable',    // /^disabled$/i
                 ],
-                "result" => "[Validate Error] disabled : disable" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : disable" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // ismap OK Case
@@ -2804,7 +2804,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'ismap',    // /^ismap$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // ismap NG Case
@@ -2814,7 +2814,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "ismap" => 'imap',    // /^ismap$/i
                 ],
-                "result" => "[Validate Error] ismap : imap" . PHP_EOL,
+                "result" => ["[Validate Error] ismap : imap" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] ismap",
             ],
             // readonly OK Case
@@ -2824,7 +2824,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'readonly',    // /^readonly$/i
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // readonly NG Case
@@ -2834,7 +2834,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "readonly" => 'raedmap',    // /^readonly$/i
                 ],
-                "result" => "[Validate Error] readonly : raedmap" . PHP_EOL,
+                "result" => ["[Validate Error] readonly : raedmap" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] readonly",
             ],
             // -- Custom Attribute
@@ -2844,7 +2844,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateXhtml11 */
-    public function testValidateXhtml11(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateXhtml11(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -2867,7 +2867,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -2877,7 +2877,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -2887,7 +2887,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -2897,7 +2897,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -2907,7 +2907,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -2917,7 +2917,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -2927,7 +2927,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -2937,7 +2937,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -2947,7 +2947,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -2957,7 +2957,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -2967,7 +2967,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -2977,7 +2977,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'lr',
                 ],
-                "result" => "[Validate Error] dir : lr" . PHP_EOL,
+                "result" => ["[Validate Error] dir : lr" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -2988,7 +2988,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'week',    // INPUT_TYPE
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -2998,7 +2998,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "type" => 'redio',    // INPUT_TYPE
                 ],
-                "result" => "[Validate Error] type : redio" . PHP_EOL,
+                "result" => ["[Validate Error] type : redio" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // name OK Case
@@ -3008,7 +3008,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => 'sample text',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -3018,7 +3018,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // value OK Case
@@ -3028,7 +3028,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // value NG Case
@@ -3038,7 +3038,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "value" => '',    // STRING
                 ],
-                "result" => "[Validate Error] value : " . PHP_EOL,
+                "result" => ["[Validate Error] value : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] value",
             ],
             // form OK Case
@@ -3048,7 +3048,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "form" => 'test',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] form",
             ],
             // form NG Case
@@ -3058,7 +3058,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "form" => '',    // STRING
                 ],
-                "result" => "[Validate Error] form : " . PHP_EOL,
+                "result" => ["[Validate Error] form : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] form",
             ],
             // -- Custom Attribute
@@ -3069,7 +3069,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -3079,7 +3079,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] disabled : om" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // autofocus OK Case
@@ -3089,7 +3089,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "autofocus" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] autofocus",
             ],
             // autofocus NG Case
@@ -3099,7 +3099,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "autofocus" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] autofocus : of" . PHP_EOL,
+                "result" => ["[Validate Error] autofocus : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] autofocus",
             ],
 
@@ -3108,7 +3108,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml5 */
-    public function testValidateHtml5(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml5(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -3131,7 +3131,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -3141,7 +3141,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -3151,7 +3151,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -3161,7 +3161,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -3171,7 +3171,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -3181,7 +3181,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -3191,7 +3191,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -3201,7 +3201,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -3211,7 +3211,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -3221,7 +3221,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -3231,7 +3231,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -3241,7 +3241,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : ato" . PHP_EOL,
+                "result" => ["[Validate Error] dir : ato" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -3253,7 +3253,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // disabled NG Case
@@ -3263,7 +3263,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "disabled" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] disabled : om" . PHP_EOL,
+                "result" => ["[Validate Error] disabled : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] disabled",
             ],
             // autofocus OK Case
@@ -3273,7 +3273,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "autofocus" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] autofocus",
             ],
             // autofocus NG Case
@@ -3283,7 +3283,7 @@ class TestCommandInput extends HasariusTest
                 "params" => [
                     "autofocus" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] autofocus : of" . PHP_EOL,
+                "result" => ["[Validate Error] autofocus : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] autofocus",
             ],
 
@@ -3292,7 +3292,7 @@ class TestCommandInput extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml51 */
-    public function testValidateHtml51(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml51(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);

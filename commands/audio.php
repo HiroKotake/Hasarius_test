@@ -19,7 +19,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "style" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -29,7 +29,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -39,7 +39,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "class" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -49,7 +49,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -59,7 +59,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "id" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -69,7 +69,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -79,7 +79,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "title" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -89,7 +89,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -99,7 +99,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "lang" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -109,7 +109,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -119,7 +119,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -129,7 +129,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : ato" . PHP_EOL,
+                "result" => ["[Validate Error] dir : ato" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -140,7 +140,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "src" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -150,7 +150,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // preload OK Case
@@ -160,7 +160,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "preload" => 'none',    // PRELOAD
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // preload NG Case
@@ -170,7 +170,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "preload" => 'metadeta',    // PRELOAD
                 ],
-                "result" => "[Validate Error] preload : metadeta" . PHP_EOL,
+                "result" => ["[Validate Error] preload : metadeta" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // mediagroup OK Case
@@ -180,7 +180,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "mediagroup" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] mediagroup",
             ],
             // mediagroup NG Case
@@ -190,7 +190,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "mediagroup" => '',    // STRING
                 ],
-                "result" => "[Validate Error] mediagroup : " . PHP_EOL,
+                "result" => ["[Validate Error] mediagroup : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] mediagroup",
             ],
             // crossorigin OK Case
@@ -200,7 +200,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "crossorigin" => 'anonymous',    // USE_SIGNIN
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // crossorigin NG Case
@@ -210,7 +210,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "crossorigin" => 'anonimous',    // USE_SIGNIN
                 ],
-                "result" => "[Validate Error] crossorigin : anonimous" . PHP_EOL,
+                "result" => ["[Validate Error] crossorigin : anonimous" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // -- Custom Attribute
@@ -221,7 +221,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "autoplay" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // autoplay NG Case
@@ -231,7 +231,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "autoplay" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] autoplay : of" . PHP_EOL,
+                "result" => ["[Validate Error] autoplay : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // loop OK Case
@@ -241,7 +241,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "loop" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // loop NG Case
@@ -251,7 +251,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "loop" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] loop : om" . PHP_EOL,
+                "result" => ["[Validate Error] loop : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // muted OK Case
@@ -261,7 +261,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "muted" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // muted NG Case
@@ -271,7 +271,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "muted" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] muted : of" . PHP_EOL,
+                "result" => ["[Validate Error] muted : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // controls OK Case
@@ -281,7 +281,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "controls" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] controls",
             ],
             // controls NG Case
@@ -291,7 +291,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "controls" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] controls : om" . PHP_EOL,
+                "result" => ["[Validate Error] controls : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] controls",
             ],
 
@@ -300,7 +300,7 @@ class TestCommandAudio extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml5 */
-    public function testValidateHtml5(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml5(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -323,7 +323,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "style" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -333,7 +333,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -343,7 +343,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "class" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -353,7 +353,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -363,7 +363,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "id" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -373,7 +373,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -383,7 +383,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "title" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -393,7 +393,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -403,7 +403,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "lang" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -413,7 +413,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -423,7 +423,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -433,7 +433,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "dir" => 'lr',
                 ],
-                "result" => "[Validate Error] dir : lr" . PHP_EOL,
+                "result" => ["[Validate Error] dir : lr" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -444,7 +444,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "src" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -454,7 +454,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // preload OK Case
@@ -464,7 +464,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "preload" => 'auto',    // PRELOAD
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // preload NG Case
@@ -474,7 +474,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "preload" => 'aut',    // PRELOAD
                 ],
-                "result" => "[Validate Error] preload : aut" . PHP_EOL,
+                "result" => ["[Validate Error] preload : aut" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // crossorigin OK Case
@@ -484,7 +484,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "crossorigin" => 'anonymous',    // USE_SIGNIN
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // crossorigin NG Case
@@ -494,7 +494,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "crossorigin" => 'anonimous',    // USE_SIGNIN
                 ],
-                "result" => "[Validate Error] crossorigin : anonimous" . PHP_EOL,
+                "result" => ["[Validate Error] crossorigin : anonimous" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // -- Custom Attribute
@@ -505,7 +505,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "autoplay" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // autoplay NG Case
@@ -515,7 +515,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "autoplay" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] autoplay : of" . PHP_EOL,
+                "result" => ["[Validate Error] autoplay : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // loop OK Case
@@ -525,7 +525,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "loop" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // loop NG Case
@@ -535,7 +535,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "loop" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] loop : of" . PHP_EOL,
+                "result" => ["[Validate Error] loop : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // muted OK Case
@@ -545,7 +545,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "muted" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // muted NG Case
@@ -555,7 +555,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "muted" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] muted : om" . PHP_EOL,
+                "result" => ["[Validate Error] muted : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // controls OK Case
@@ -565,7 +565,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "controls" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] controls",
             ],
             // controls NG Case
@@ -575,7 +575,7 @@ class TestCommandAudio extends HasariusTest
                 "params" => [
                     "controls" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] controls : om" . PHP_EOL,
+                "result" => ["[Validate Error] controls : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] controls",
             ],
 
@@ -584,7 +584,7 @@ class TestCommandAudio extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml51 */
-    public function testValidateHtml51(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml51(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);

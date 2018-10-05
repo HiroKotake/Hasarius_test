@@ -19,7 +19,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "style" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -29,7 +29,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -39,7 +39,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "class" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -49,7 +49,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -59,7 +59,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "id" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -69,7 +69,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -79,7 +79,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "title" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -89,7 +89,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -99,7 +99,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "lang" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -109,7 +109,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -119,7 +119,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -129,7 +129,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "dir" => 'ato',
                 ],
-                "result" => "[Validate Error] dir : ato" . PHP_EOL,
+                "result" => ["[Validate Error] dir : ato" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -140,7 +140,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "srcset" => 'small.jpg 320w, medium.jpg 640w, large.jpg 1280w',    // SRCSET
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] srcset",
             ],
             // srcset NG Case
@@ -150,7 +150,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "srcset" => 'small.jpg x, medium.jpg 2x',    // SRCSET
                 ],
-                "result" => "[Validate Error] srcset : small.jpg x, medium.jpg 2x" . PHP_EOL,
+                "result" => ["[Validate Error] srcset : small.jpg x, medium.jpg 2x" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] srcset",
             ],
             // type OK Case
@@ -160,7 +160,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "type" => 'image/png',    // MIME
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // type NG Case
@@ -170,7 +170,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "type" => 'imag/jpeg',    // MIME
                 ],
-                "result" => "[Validate Error] type : imag/jpeg" . PHP_EOL,
+                "result" => ["[Validate Error] type : imag/jpeg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] type",
             ],
             // media OK Case
@@ -180,7 +180,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "media" => 'screen and (max-width: 500px) and (orientation: portrait)',    // MEDIA_QUERY
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] media",
             ],
             // media NG Case
@@ -190,8 +190,8 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "media" => 'screen ad (min-width: 640px)',    // MEDIA_QUERY
                 ],
-                "result" => '',
-                // "result" => "[Validate Error] media : screen ad (min-width: 640px)" . PHP_EOL,
+                "result" => [],
+                // "result" => ["[Validate Error] media : screen ad (min-width: 640px)" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] media",
             ],
             // sizes OK Case
@@ -201,7 +201,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "sizes" => '50vw',    // MEDIA_QUERY - Shorty
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] sizes",
             ],
             // sizes NG Case
@@ -211,8 +211,8 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "sizes" => '50',    // MEDIA_QUERY - Shorty
                 ],
-                "result" => '',
-                // "result" => "[Validate Error] sizes : 50" . PHP_EOL,
+                "result" => [],
+                // "result" => ["[Validate Error] sizes : 50" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] sizes",
             ],
             // sizes OK Case
@@ -222,7 +222,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "sizes" => '(max-width: 420px) 100vw, (max-width: 800px) 70vw, 50vw',    // MEDIA_QUERY - Shorty
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] sizes",
             ],
             // sizes NG Case
@@ -232,8 +232,8 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "sizes" => '(max-width: 420px) 100, (max-width: 800px) 70vw, 50vw',    // MEDIA_QUERY - Shorty
                 ],
-                "result" => '',
-                // "result" => "[Validate Error] sizes : (max-width: 420px) 100, (max-width: 800px) 70vw, 50vw" . PHP_EOL,
+                "result" => [],
+                // "result" => ["[Validate Error] sizes : (max-width: 420px) 100, (max-width: 800px) 70vw, 50vw" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] sizes",
             ],
             // sizes OK Case
@@ -243,7 +243,7 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "sizes" => '(max-width: 1280px) 100vw, 1280px',    // MEDIA_QUERY - Shorty
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] sizes",
             ],
             // sizes NG Case
@@ -253,8 +253,8 @@ class TestCommandPicture extends HasariusTest
                 "params" => [
                     "sizes" => '(max-width: 1280) 100vw, 1280px',    // MEDIA_QUERY - Shorty
                 ],
-                "result" => '',
-                // "result" => "[Validate Error] sizes : (max-width: 1280) 100vw, 1280px" . PHP_EOL,
+                "result" => [],
+                // "result" => ["[Validate Error] sizes : (max-width: 1280) 100vw, 1280px" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] sizes",
             ],
 
@@ -263,7 +263,7 @@ class TestCommandPicture extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml51 */
-    public function testValidateHtml51(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml51(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);

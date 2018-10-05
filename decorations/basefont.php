@@ -22,7 +22,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id198_93',
                     "size" => '2',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -34,7 +34,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id198_93',
                     "size" => '10',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => "[Validate Error] size : 10" . PHP_EOL,
+                "result" => ["[Validate Error] size : 10" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // color OK Case
@@ -46,7 +46,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id198_93',
                     "color" => '#FF7F00',    // COLOR
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // color NG Case
@@ -58,7 +58,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id198_93',
                     "color" => 'rad',    // COLOR
                 ],
-                "result" => "[Validate Error] color : rad" . PHP_EOL,
+                "result" => ["[Validate Error] color : rad" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // face OK Case
@@ -70,7 +70,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id198_93',
                     "face" => 'MS-Gothic',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] face",
             ],
             // face NG Case
@@ -82,7 +82,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id198_93',
                     "face" => '',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] face",
             ],
 
@@ -91,7 +91,7 @@ class TestDecorationBasefont extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml4Loose */
-    public function testValidateHtml4Loose(string $dtd, string $text, string $decoration, array $params, string $result, string $description)
+    public function testValidateHtml4Loose(string $dtd, string $text, string $decoration, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeDecorationCase($text);
@@ -122,7 +122,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id850_35',
                     "size" => '-2',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -134,7 +134,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id850_35',
                     "size" => '-11',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => "[Validate Error] size : -11" . PHP_EOL,
+                "result" => ["[Validate Error] size : -11" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // color OK Case
@@ -146,7 +146,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id850_35',
                     "color" => '#FF7F00',    // COLOR
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // color NG Case
@@ -158,7 +158,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id850_35',
                     "color" => 'yellaw',    // COLOR
                 ],
-                "result" => "[Validate Error] color : yellaw" . PHP_EOL,
+                "result" => ["[Validate Error] color : yellaw" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // face OK Case
@@ -170,7 +170,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id850_35',
                     "face" => 'MS-Gothic',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] face",
             ],
             // face NG Case
@@ -182,7 +182,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id850_35',
                     "face" => '',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] face",
             ],
 
@@ -191,7 +191,7 @@ class TestDecorationBasefont extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml4Frame */
-    public function testValidateHtml4Frame(string $dtd, string $text, string $decoration, array $params, string $result, string $description)
+    public function testValidateHtml4Frame(string $dtd, string $text, string $decoration, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeDecorationCase($text);
@@ -222,7 +222,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id545_71',
                     "size" => '5',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -234,7 +234,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id545_71',
                     "size" => '0',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => "[Validate Error] size : 0" . PHP_EOL,
+                "result" => ["[Validate Error] size : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // color OK Case
@@ -246,7 +246,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id545_71',
                     "color" => '#FF7F00',    // COLOR
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // color NG Case
@@ -258,7 +258,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id545_71',
                     "color" => '#00F10',    // COLOR
                 ],
-                "result" => "[Validate Error] color : #00F10" . PHP_EOL,
+                "result" => ["[Validate Error] color : #00F10" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // face OK Case
@@ -270,7 +270,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id545_71',
                     "face" => 'MS-Gothic',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] face",
             ],
             // face NG Case
@@ -282,7 +282,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id545_71',
                     "face" => '',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] face",
             ],
 
@@ -291,7 +291,7 @@ class TestDecorationBasefont extends HasariusTest
     }
 
     /** @dataProvider provideValidateXhtml1Loose */
-    public function testValidateXhtml1Loose(string $dtd, string $text, string $decoration, array $params, string $result, string $description)
+    public function testValidateXhtml1Loose(string $dtd, string $text, string $decoration, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeDecorationCase($text);
@@ -322,7 +322,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id481_66',
                     "size" => '+3',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // size NG Case
@@ -334,7 +334,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id481_66',
                     "size" => '+9',    // /(+|-)(1|2|3|4|5|6|7)/
                 ],
-                "result" => "[Validate Error] size : +9" . PHP_EOL,
+                "result" => ["[Validate Error] size : +9" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] size",
             ],
             // color OK Case
@@ -346,7 +346,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id481_66',
                     "color" => 'red',    // COLOR
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // color NG Case
@@ -358,7 +358,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id481_66',
                     "color" => '#FF7F0',    // COLOR
                 ],
-                "result" => "[Validate Error] color : #FF7F0" . PHP_EOL,
+                "result" => ["[Validate Error] color : #FF7F0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] color",
             ],
             // face OK Case
@@ -370,7 +370,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id481_66',
                     "face" => 'MS-Gothic',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] face",
             ],
             // face NG Case
@@ -382,7 +382,7 @@ class TestDecorationBasefont extends HasariusTest
                     "id" => 'id481_66',
                     "face" => '',    // FONT
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] face",
             ],
 
@@ -391,7 +391,7 @@ class TestDecorationBasefont extends HasariusTest
     }
 
     /** @dataProvider provideValidateXhtml1Frame */
-    public function testValidateXhtml1Frame(string $dtd, string $text, string $decoration, array $params, string $result, string $description)
+    public function testValidateXhtml1Frame(string $dtd, string $text, string $decoration, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeDecorationCase($text);

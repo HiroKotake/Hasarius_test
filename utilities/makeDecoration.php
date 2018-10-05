@@ -130,7 +130,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                   .  spr(20) . "\"id\" => '" . $id . "'," . PHP_EOL
                   .  spr(20) . "\"$key\" => '" . $testValue['OK'] . "'," . PHP_EOL
                   .  spr(16) . "]," . PHP_EOL
-                  .  spr(16) . "\"result\" => ''," . PHP_EOL
+                  .  spr(16) . "\"result\" => []," . PHP_EOL
                   .  spr(16) . "\"description\" => \"OK CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                   .  spr(12) . "]," . PHP_EOL;
         // NG Case
@@ -143,7 +143,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                   .  spr(20) . "\"id\" => '" . $id . "'," . PHP_EOL
                   .  spr(20) . "\"$key\" => '" . $testValue['NG'] . "'," . PHP_EOL
                   .  spr(16) . "]," . PHP_EOL
-                  .  spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
+                  .  spr(16) . "\"result\" => [\"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL]," . PHP_EOL
                   .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                   .  spr(12) . "]," . PHP_EOL;
     }
@@ -177,7 +177,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(20) . "\"shape\" => '" . $testValue["OK"]["key"] . "'," . PHP_EOL
                           .  spr(20) . "\"coords\" => '" . $testValue["OK"]["value"] . "'," . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL
-                          .  spr(16) . "\"result\" => ''," . PHP_EOL
+                          .  spr(16) . "\"result\" => []," . PHP_EOL
                           .  spr(16) . "\"description\" => \"OK CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                           .  spr(12) . "]," . PHP_EOL;
                 // NG Case
@@ -191,7 +191,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(20) . "\"shape\" => '" . $testValue["NG"]["key"] . "'," . PHP_EOL
                           .  spr(20) . "\"coords\" => '" . $testValue["NG"]["value"] . "'," . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL
-                          .  spr(16) . "\"result\" => \"[Validate Error] coords : " . $testValue['NG']["value"] . "\" . PHP_EOL," . PHP_EOL
+                          .  spr(16) . "\"result\" => [\"[Validate Error] coords : " . $testValue['NG']["value"] . "\" . PHP_EOL]," . PHP_EOL
                           .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                           .  spr(12) . "]," . PHP_EOL;
             } else {
@@ -205,7 +205,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(20) . "\"id\" => '" . $id . "'," . PHP_EOL
                           .  spr(20) . "\"$key\" => '" . $testValue["OK"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL
-                          .  spr(16) . "\"result\" => ''," . PHP_EOL
+                          .  spr(16) . "\"result\" => []," . PHP_EOL
                           .  spr(16) . "\"description\" => \"OK CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                           .  spr(12) . "]," . PHP_EOL;
                 // NG Case
@@ -219,11 +219,11 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(20) . "\"$key\" => '" . $testValue["NG"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL;
                 if ($attr["CompareType"] == "DEFINED" || $attr["CompareType"] == "VALUE") {
-                    $testData .= spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
+                    $testData .= spr(16) . "\"result\" => [\"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL]," . PHP_EOL
                               .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                               .  spr(12) . "]," . PHP_EOL;
                 } else {
-                    $testData .= spr(16) . "\"result\" => ''," . PHP_EOL
+                    $testData .= spr(16) . "\"result\" => []," . PHP_EOL
                               .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                               .  spr(12) . "]," . PHP_EOL;
                 }
@@ -259,7 +259,7 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(20) . "\"id\" => '" . $id . "'," . PHP_EOL
                           .  spr(20) . "\"$key\" => '" . $testValue["OK"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL
-                          .  spr(16) . "\"result\" => ''," . PHP_EOL
+                          .  spr(16) . "\"result\" => []," . PHP_EOL
                           .  spr(16) . "\"description\" => \"OK CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                           .  spr(12) . "]," . PHP_EOL;
                 // NG Case
@@ -273,11 +273,11 @@ foreach ($defs["DocumentType"] as $dtd) {
                           .  spr(20) . "\"$key\" => '" . $testValue["NG"] . "'," . spr(4) . "// " . $attr['Value'] . PHP_EOL
                           .  spr(16) . "]," . PHP_EOL;
                 if ($attr["CompareType"] == "DEFINED" || $attr["CompareType"] == "VALUE") {
-                    $testData .= spr(16) . "\"result\" => \"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL," . PHP_EOL
+                    $testData .= spr(16) . "\"result\" => [\"[Validate Error] " . $key . " : " . $testValue['NG'] . "\" . PHP_EOL]," . PHP_EOL
                               .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                               .  spr(12) . "]," . PHP_EOL;
                 } else {
-                    $testData .= spr(16) . "\"result\" => ''," . PHP_EOL
+                    $testData .= spr(16) . "\"result\" => []," . PHP_EOL
                               .  spr(16) . "\"description\" => \"NG CHECK PROCESS[\" . " . '__LINE__' . " . \"] " . $key . "\"," . PHP_EOL
                               .  spr(12) . "]," . PHP_EOL;
                 }

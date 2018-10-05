@@ -19,7 +19,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "style" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -29,7 +29,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -39,7 +39,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "class" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -49,7 +49,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -59,7 +59,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "id" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -69,7 +69,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -79,7 +79,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "title" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -89,7 +89,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -99,7 +99,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "lang" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -109,7 +109,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -119,7 +119,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "dir" => 'ltr',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -129,7 +129,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "dir" => 'rl',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => ["[Validate Error] dir : rl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -140,7 +140,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "src" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -150,7 +150,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // poster OK Case
@@ -160,7 +160,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "poster" => 'https://www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] poster",
             ],
             // poster NG Case
@@ -170,7 +170,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "poster" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] poster : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] poster : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] poster",
             ],
             // preload OK Case
@@ -180,7 +180,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "preload" => 'none',    // PRELOAD
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // preload NG Case
@@ -190,7 +190,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "preload" => 'aut',    // PRELOAD
                 ],
-                "result" => "[Validate Error] preload : aut" . PHP_EOL,
+                "result" => ["[Validate Error] preload : aut" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // mediagroup OK Case
@@ -200,7 +200,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "mediagroup" => 'sample text',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] mediagroup",
             ],
             // mediagroup NG Case
@@ -210,7 +210,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "mediagroup" => '',    // STRING
                 ],
-                "result" => "[Validate Error] mediagroup : " . PHP_EOL,
+                "result" => ["[Validate Error] mediagroup : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] mediagroup",
             ],
             // width OK Case
@@ -220,7 +220,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "width" => '4086',    // NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] width",
             ],
             // width NG Case
@@ -230,7 +230,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "width" => '16.5',    // NZ
                 ],
-                "result" => "[Validate Error] width : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] width : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] width",
             ],
             // height OK Case
@@ -240,7 +240,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "height" => '256',    // NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] height",
             ],
             // height NG Case
@@ -250,7 +250,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "height" => '16.5',    // NZ
                 ],
-                "result" => "[Validate Error] height : 16.5" . PHP_EOL,
+                "result" => ["[Validate Error] height : 16.5" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] height",
             ],
             // crossorigin OK Case
@@ -260,7 +260,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "crossorigin" => 'anonymous',    // USE_SIGNIN
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // crossorigin NG Case
@@ -270,7 +270,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "crossorigin" => 'use-credential',    // USE_SIGNIN
                 ],
-                "result" => "[Validate Error] crossorigin : use-credential" . PHP_EOL,
+                "result" => ["[Validate Error] crossorigin : use-credential" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // -- Custom Attribute
@@ -281,7 +281,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "autoplay" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // autoplay NG Case
@@ -291,7 +291,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "autoplay" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] autoplay : om" . PHP_EOL,
+                "result" => ["[Validate Error] autoplay : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // loop OK Case
@@ -301,7 +301,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "loop" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // loop NG Case
@@ -311,7 +311,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "loop" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] loop : of" . PHP_EOL,
+                "result" => ["[Validate Error] loop : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // muted OK Case
@@ -321,7 +321,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "muted" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // muted NG Case
@@ -331,7 +331,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "muted" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] muted : of" . PHP_EOL,
+                "result" => ["[Validate Error] muted : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // controls OK Case
@@ -341,7 +341,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "controls" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] controls",
             ],
             // controls NG Case
@@ -351,7 +351,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "controls" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] controls : of" . PHP_EOL,
+                "result" => ["[Validate Error] controls : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] controls",
             ],
 
@@ -360,7 +360,7 @@ class TestCommandVideo extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml5 */
-    public function testValidateHtml5(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml5(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
@@ -383,7 +383,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "style" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -393,7 +393,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -403,7 +403,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "class" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -413,7 +413,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // id OK Case
@@ -423,7 +423,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "id" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // id NG Case
@@ -433,7 +433,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "id" => '',
                 ],
-                "result" => "[Validate Error] id : " . PHP_EOL,
+                "result" => ["[Validate Error] id : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] id",
             ],
             // title OK Case
@@ -443,7 +443,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "title" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -453,7 +453,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -463,7 +463,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "lang" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -473,7 +473,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -483,7 +483,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -493,7 +493,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "dir" => 'rl',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => ["[Validate Error] dir : rl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -504,7 +504,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "src" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // src NG Case
@@ -514,7 +514,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "src" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] src : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] src",
             ],
             // poster OK Case
@@ -524,7 +524,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "poster" => '../script/sample.js',    // URI
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] poster",
             ],
             // poster NG Case
@@ -534,7 +534,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "poster" => 'https://80:www.teleios.jp/img/sample.jpg',    // URI
                 ],
-                "result" => "[Validate Error] poster : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL,
+                "result" => ["[Validate Error] poster : https://80:www.teleios.jp/img/sample.jpg" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] poster",
             ],
             // preload OK Case
@@ -544,7 +544,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "preload" => 'auto',    // PRELOAD
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // preload NG Case
@@ -554,7 +554,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "preload" => 'aut',    // PRELOAD
                 ],
-                "result" => "[Validate Error] preload : aut" . PHP_EOL,
+                "result" => ["[Validate Error] preload : aut" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] preload",
             ],
             // width OK Case
@@ -564,7 +564,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "width" => '4086',    // NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] width",
             ],
             // width NG Case
@@ -574,7 +574,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "width" => '0',    // NZ
                 ],
-                "result" => "[Validate Error] width : 0" . PHP_EOL,
+                "result" => ["[Validate Error] width : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] width",
             ],
             // height OK Case
@@ -584,7 +584,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "height" => '256',    // NZ
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] height",
             ],
             // height NG Case
@@ -594,7 +594,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "height" => '0',    // NZ
                 ],
-                "result" => "[Validate Error] height : 0" . PHP_EOL,
+                "result" => ["[Validate Error] height : 0" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] height",
             ],
             // crossorigin OK Case
@@ -604,7 +604,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "crossorigin" => 'use-credentials',    // USE_SIGNIN
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // crossorigin NG Case
@@ -614,7 +614,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "crossorigin" => 'use-credential',    // USE_SIGNIN
                 ],
-                "result" => "[Validate Error] crossorigin : use-credential" . PHP_EOL,
+                "result" => ["[Validate Error] crossorigin : use-credential" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] crossorigin",
             ],
             // -- Custom Attribute
@@ -625,7 +625,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "autoplay" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // autoplay NG Case
@@ -635,7 +635,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "autoplay" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] autoplay : of" . PHP_EOL,
+                "result" => ["[Validate Error] autoplay : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] autoplay",
             ],
             // loop OK Case
@@ -645,7 +645,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "loop" => 'off',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // loop NG Case
@@ -655,7 +655,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "loop" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] loop : of" . PHP_EOL,
+                "result" => ["[Validate Error] loop : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] loop",
             ],
             // muted OK Case
@@ -665,7 +665,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "muted" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // muted NG Case
@@ -675,7 +675,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "muted" => 'om',    // ON_OFF
                 ],
-                "result" => "[Validate Error] muted : om" . PHP_EOL,
+                "result" => ["[Validate Error] muted : om" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] muted",
             ],
             // controls OK Case
@@ -685,7 +685,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "controls" => 'on',    // ON_OFF
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] controls",
             ],
             // controls NG Case
@@ -695,7 +695,7 @@ class TestCommandVideo extends HasariusTest
                 "params" => [
                     "controls" => 'of',    // ON_OFF
                 ],
-                "result" => "[Validate Error] controls : of" . PHP_EOL,
+                "result" => ["[Validate Error] controls : of" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] controls",
             ],
 
@@ -704,7 +704,7 @@ class TestCommandVideo extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml51 */
-    public function testValidateHtml51(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidateHtml51(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);

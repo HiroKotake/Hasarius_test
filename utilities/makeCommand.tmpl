@@ -8,7 +8,7 @@
     }
 
     /** @dataProvider provideValidate@DTD@ */
-    public function testValidate@DTD@(string $dtd, string $text, array $params, string $result, string $description)
+    public function testValidate@DTD@(string $dtd, string $text, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);

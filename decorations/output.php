@@ -21,7 +21,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "style" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -33,7 +33,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -45,7 +45,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "class" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -57,7 +57,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // title OK Case
@@ -69,7 +69,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "title" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -81,7 +81,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -93,7 +93,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "lang" => 'サンプル テキスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -105,7 +105,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -117,7 +117,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "dir" => 'auto',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -129,7 +129,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "dir" => 'rl',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => ["[Validate Error] dir : rl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -142,7 +142,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "name" => 'test',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -154,7 +154,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // for OK Case
@@ -166,7 +166,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "for" => 'test',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] for",
             ],
             // for NG Case
@@ -178,7 +178,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "for" => '',    // STRING
                 ],
-                "result" => "[Validate Error] for : " . PHP_EOL,
+                "result" => ["[Validate Error] for : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] for",
             ],
             // form OK Case
@@ -190,7 +190,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "form" => 'サンプル テキスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] form",
             ],
             // form NG Case
@@ -202,7 +202,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id143_14',
                     "form" => '',    // STRING
                 ],
-                "result" => "[Validate Error] form : " . PHP_EOL,
+                "result" => ["[Validate Error] form : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] form",
             ],
 
@@ -211,7 +211,7 @@ class TestDecorationOutput extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml5 */
-    public function testValidateHtml5(string $dtd, string $text, string $decoration, array $params, string $result, string $description)
+    public function testValidateHtml5(string $dtd, string $text, string $decoration, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeDecorationCase($text);
@@ -241,7 +241,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "style" => 'テスト',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // style NG Case
@@ -253,7 +253,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "style" => '',
                 ],
-                "result" => "[Validate Error] style : " . PHP_EOL,
+                "result" => ["[Validate Error] style : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] style",
             ],
             // class OK Case
@@ -265,7 +265,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "class" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // class NG Case
@@ -277,7 +277,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "class" => '',
                 ],
-                "result" => "[Validate Error] class : " . PHP_EOL,
+                "result" => ["[Validate Error] class : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] class",
             ],
             // title OK Case
@@ -289,7 +289,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "title" => 'test',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // title NG Case
@@ -301,7 +301,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "title" => '',
                 ],
-                "result" => "[Validate Error] title : " . PHP_EOL,
+                "result" => ["[Validate Error] title : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] title",
             ],
             // lang OK Case
@@ -313,7 +313,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "lang" => 'sample text',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // lang NG Case
@@ -325,7 +325,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "lang" => '',
                 ],
-                "result" => "[Validate Error] lang : " . PHP_EOL,
+                "result" => ["[Validate Error] lang : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] lang",
             ],
             // dir OK Case
@@ -337,7 +337,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "dir" => 'rtl',
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // dir NG Case
@@ -349,7 +349,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "dir" => 'rl',
                 ],
-                "result" => "[Validate Error] dir : rl" . PHP_EOL,
+                "result" => ["[Validate Error] dir : rl" . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] dir",
             ],
             // -- Tag Attribute
@@ -362,7 +362,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "name" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // name NG Case
@@ -374,7 +374,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "name" => '',    // STRING
                 ],
-                "result" => "[Validate Error] name : " . PHP_EOL,
+                "result" => ["[Validate Error] name : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] name",
             ],
             // for OK Case
@@ -386,7 +386,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "for" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] for",
             ],
             // for NG Case
@@ -398,7 +398,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "for" => '',    // STRING
                 ],
-                "result" => "[Validate Error] for : " . PHP_EOL,
+                "result" => ["[Validate Error] for : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] for",
             ],
             // form OK Case
@@ -410,7 +410,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "form" => 'テスト',    // STRING
                 ],
-                "result" => '',
+                "result" => [],
                 "description" => "OK CHECK PROCESS[" . __LINE__ . "] form",
             ],
             // form NG Case
@@ -422,7 +422,7 @@ class TestDecorationOutput extends HasariusTest
                     "id" => 'id6_92',
                     "form" => '',    // STRING
                 ],
-                "result" => "[Validate Error] form : " . PHP_EOL,
+                "result" => ["[Validate Error] form : " . PHP_EOL],
                 "description" => "NG CHECK PROCESS[" . __LINE__ . "] form",
             ],
 
@@ -431,7 +431,7 @@ class TestDecorationOutput extends HasariusTest
     }
 
     /** @dataProvider provideValidateHtml51 */
-    public function testValidateHtml51(string $dtd, string $text, string $decoration, array $params, string $result, string $description)
+    public function testValidateHtml51(string $dtd, string $text, string $decoration, array $params, array $result, string $description)
     {
         $this->changeDtd($dtd);
         $data = $this->makeDecorationCase($text);

@@ -18,7 +18,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "id" => "authors",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "HTML4_LOOSE",
@@ -26,7 +26,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "auto",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "HTML4_LOOSE",
@@ -34,7 +34,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "title" => "タイトル",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "HTML4_LOOSE",
@@ -42,7 +42,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "left",
                 ],
-                "result" => "[Validate Error] dir : left" . PHP_EOL
+                "result" => ["[Validate Error] dir : left" . PHP_EOL]
             ],
             // HTML4_STRICT
             [
@@ -51,7 +51,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "id" => "authors",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "HTML4_STRICT",
@@ -59,7 +59,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "auto",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "HTML4_STRICT",
@@ -67,7 +67,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "left",
                 ],
-                "result" => "[Validate Error] dir : left" . PHP_EOL
+                "result" => ["[Validate Error] dir : left" . PHP_EOL]
             ],
             // XHTML1_LOOSE
             [
@@ -76,7 +76,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "id" => "authors",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "XHTML1_LOOSE",
@@ -84,7 +84,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "auto",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "XHTML1_LOOSE",
@@ -92,7 +92,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "left",
                 ],
-                "result" => "[Validate Error] dir : left" . PHP_EOL
+                "result" => ["[Validate Error] dir : left" . PHP_EOL]
             ],
             // XHTML1_1
             [
@@ -101,7 +101,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "id" => "authors",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "XHTML1_1",
@@ -109,7 +109,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "auto",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "XHTML1_1",
@@ -117,7 +117,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "left",
                 ],
-                "result" => "[Validate Error] dir : left" . PHP_EOL
+                "result" => ["[Validate Error] dir : left" . PHP_EOL]
             ],
             // HTML5_1
             [
@@ -126,7 +126,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "id" => "authors",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "HTML5_1",
@@ -134,7 +134,7 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "auto",
                 ],
-                "result" => ""
+                "result" => []
             ],
             [
                 "dtd" => "HTML5_1",
@@ -142,13 +142,13 @@ class TestCommandAddress extends HasariusTest
                 "params" => [
                     "dir" => "left",
                 ],
-                "result" => "[Validate Error] dir : left" . PHP_EOL
+                "result" => ["[Validate Error] dir : left" . PHP_EOL]
             ],
         ];
     }
 
     /** @dataProvider provideValidate */
-    public function testValidate(string $dtd, string $text, array $params, string $result)
+    public function testValidate(string $dtd, string $text, array $params, array $result)
     {
         $this->changeDtd($dtd);
         $data = $this->makeCommandCase($text);
